@@ -1,0 +1,73 @@
+@font-face{
+    font-family: ipix;
+    src: url('IPix.ttf');
+}
+
+
+body{
+  margin: 0px;
+  background-color: #111;
+}
+
+#CyuuOu{
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  height: auto;
+  padding: 2.5%;
+  width: 50%;
+  border: 1px solid #fff;
+  background-color: #000;
+  transform: scale(1,1);
+  color: #fff;
+  font-size: 40px;
+  font-family:ipix;
+}
+
+#chat {
+  margin-bottom: 100px;
+  margin-left: 5%;
+}
+
+.chatText{
+  max-width: 95%;
+}
+.chatText:hover{
+  background-color: #fff;
+  color: #000;
+}
+
+.buttons{
+  margin-left: 5%;
+}
+.buttons:hover{
+  background-color: #fff;
+  color: #000;
+}
+
+#replyContent{
+  left:0;
+  background-color: #333;
+  color: #fff;
+  font-size: 40px;
+  font-family: ipix;
+  border: 0px;
+  padding: 8px 4px;
+  margin-right: 0px;
+  margin-left: 5%;
+  width: 70%;
+}
+
+.replyText{
+  list-style-type: none;
+  color: black;
+  text-align: right;
+}
+.replyText span{
+  word-break: break-all;
+  padding: 2px;
+  background-color: lightgreen;
+}
+.replyText span:hover{
+  background-color: darkgreen;
+}
