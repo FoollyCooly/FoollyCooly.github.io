@@ -2,21 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>一个标题</title>
+    <title>请把香蕉喂给我......</title>
     <link rel="stylesheet" type="text/css" href="css/homepage.css">
     <script type="text/javascript" src="js/homepage.js"></script>
   </head>
   <body>
-    <div id="CyuuOu">(～￣▽￣)～
+    <div id="CyuuOu"><span id='title' style="color:mediumaquamarine;">Ⴚტ◕‿◕ტჂ</span>
       <ul id ="chat">
       </ul>
+      <HR align='center' color=#555 SIZE=3>
       <div id = 'reply'>
         <p>
-          <input id='replyContent' type="text" placeholder="请在此处输入你想说的话" name="" value="">
+          <input id='replyContent' type="text" placeholder="将下方选项拖动至此" name="" value="" ondragenter = 'putOn(event)' ondragleave = 'putOff(event)' ondrop = 'drop(event)'>
           <a id='submitButton' class="buttons" onclick="submit()" style='position: relative;margin: 0px;padding:8px 2%;right:-2%;border:2px solid #fff'>发送</a>
         </p>
     </div>
-      <a id='startButton' class="buttons" onclick="start()">start</a>
-    </div>
+    <ul id = 'panic'>
+    </ul>
   </body>
 </html>

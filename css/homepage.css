@@ -44,6 +44,12 @@ body{
   background-color: #fff;
   color: #000;
 }
+.dragButton{
+  margin-left: 5%;
+  background-color: pink;
+  color: darkblue;
+  padding: 5px;
+}
 
 #replyContent{
   left:0;
@@ -70,4 +76,8 @@ body{
 }
 .replyText span:hover{
   background-color: darkgreen;
+}
+
+#panic{
+  
 }
