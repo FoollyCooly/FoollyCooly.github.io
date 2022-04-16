@@ -311,7 +311,7 @@ function p1e1(){
     }else if (theReply.search('啊？蜘蛛难道不是有8条腿吗？') !== -1) {
       clearP();
       setTimeout(function(){p1f3();},350);
-    }else if (theReply.search('哦哦，原来是这样，吓我一跳。所以你为什么要杀虫啊？')) {
+    }else if (theReply.search('哦哦，原来是这样，吓我一跳。所以你为什么要杀虫啊？' !== -1)) {
       clearP();
       setTimeout(function(){p1f1();},350);
     }else {
