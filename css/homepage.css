@@ -78,6 +78,13 @@ body{
   background-color: darkgreen;
 }
 
+.tipText{
+  list-style-type: none;
+  text-align: center;
+  color: skyblue;
+  background-color: #111;
+}
+
 #panic{
-  
+
 }
