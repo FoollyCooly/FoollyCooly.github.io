@@ -116,7 +116,12 @@ function drop(ev){
   ev = ev||window.event;
   ev.preventDefault();
   var reply = document.getElementById('replyContent');
-  reply.value = ev.dataTransfer.getData('Text');
+  var headPoint = reply.value.search('~');
+  if (headPoint !==0) {
+    reply.value = reply.value.slice(0,headPoint+1) + ev.dataTransfer.getData('Text');
+  }else {
+    reply.value = ev.dataTransfer.getData('Text');
+  }
   reply.style.backgroundColor = '#333';
   voice('Hit');
 }
@@ -131,21 +136,24 @@ function tip(tipContent){
 }
 
 function submit(){
-  voice('Pickup3');
   var reply = document.getElementById('replyContent');
-  var replyBox = document.createElement('li');
-  replyBox.setAttribute('class','replyText');
-  replyBox.innerHTML = "<span></span>";
-  theReply = reply.value;
-  replyBox.children[0].innerHTML = theReply;
-  reply.value = '';
-  document.getElementById('chat').appendChild(replyBox);
-  p();
+  if (reply.value.length >0 ) {
+    voice('Pickup3');
+    var replyBox = document.createElement('li');
+    replyBox.setAttribute('class','replyText');
+    replyBox.innerHTML = "<span></span>";
+    theReply = reply.value;
+    replyBox.children[0].innerHTML = theReply;
+    reply.value = '';
+    document.getElementById('chat').appendChild(replyBox);
+    p();
+  }
 }
 
 function p(){
   for (var x in nextP){
-      nextP[x]();
+    console.log(x+','+nextP[x]);
+    nextP[x]();
   }
 }
 
@@ -167,13 +175,37 @@ function restart(tipWhat,backWhere,buttonHow){
   }
 }
 
+function setPH(phContent){
+  if (phContent === undefined) {
+    phContent = '可将下方选项拖动至此';
+  }
+  var reply = document.getElementById('replyContent');
+  reply.placeholder = phContent;
+}
+
+function setFlag(flagName){
+  if(flagName.count === undefined){
+    flagName.count = 1;
+  }else {
+    flagName.count++;
+  }
+  var flagX = 0;
+
+  for(var x = 1;x < arguments.length;x++){
+    if(flagName.count >= arguments[x]){
+      flagX = x;
+    }
+  }
+  return flagX;
+}
+
 //事件流
 var clock = new Date();
 window.onload = function(){
   title = document.getElementById('title');
   title.innerHTML = "Ⴚტ◕‿◕ტჂ";
   creatButton('startButton','【Start!】');
-  nextP[0] = function(r){
+  nextP[0] = function(){
     if (theReply === '【Start!】') {
     p0a();
     }
@@ -197,7 +229,9 @@ function p0b(){
   setTimeout(function(){
     createText('t0b','汪~ 在下阿狗！你是哪位？',150,['dog1','dog2','dog3']);
   },400);
-  nextP[0] = function(r){
+  setPH('输入你的名称');
+  nextP[0] = function(){
+    setPH();
     clearP();
     p0c();
   };
@@ -206,7 +240,11 @@ function p0b(){
 function p0c(){
   userName = theReply;
   setTimeout(function(){
-    createText('t0c','汪~ '+userName+'？果然是没听过的名字。',150,['dog1','dog2','dog3'],p0d);
+    if (userName === '阿狗') {
+      createText('t0c','汪~ '+userName+'？为什么要取和阿狗一样的名字。',110,['dog1','dog2','dog3'],p0d);
+    }else{
+      createText('t0c','汪~ '+userName+'？果然是没听过的名字。',110,['dog1','dog2','dog3'],p0d);
+    }
   },400);
 }
 
@@ -230,31 +268,33 @@ function p1a(){
 };
 
 function p1b(){
-  createText('t1b','啾啾~ 在下蛛蛛侠，来着何人？！',80,['spider1','spider2','spider3','spider4']);
+  createText('t1b','啾啾~ 在下蛛蛛侠，来者何人？！',80,['spider1','spider2','spider3','spider4']);
   creatButton('b1b0','我是'+userName);
   creatButton('b1b1','我是阿狗');
-  clearP()
+
+  var p1b_F = setFlag(p1b,3,5,7)
+  if(p1b_F === 1){
+    setPH('要装的更像一点');
+  }else if (p1b_F === 2) {
+    setPH('想想阿狗会怎么说');
+  }else if (p1b_F === 3) {
+    setPH('汪~ 我是阿狗');
+  }
+
+  clearP();
   nextP[0] = function(){
     if(theReply === '汪~ 我是阿狗'||theReply === '汪~我是阿狗'){
       clearP();
+      setPH();
       setTimeout(function(){p1c0();},350);
-    }
-  };
-  nextP[1] = function(){
-    if(theReply === '我是阿狗'){
+    }else if (theReply === '我是阿狗') {
       clearP();
       setTimeout(function(){p1c1();},350);
-    }
-  };
-  nextP[2] = function(){
-    if(theReply === '我是'+userName){
+    }else if (theReply.search('我是') === -1) {
+      setTimeout(function(){createText('t1b1','啾啾~ 废话少说，先报上名来！',70,['spider1','spider2','spider3','spider4']);},350);
+    }else {
       clearP();
       setTimeout(function(){p1c2();},350);
-    }
-  };
-  nextP[3] = function(){
-    if (theReply.search('我是') === -1) {
-      setTimeout(function(){createText('t1b1','啾啾~ 废话少说，先报上名来！',70,['spider1','spider2','spider3','spider4']);},350);
     }
   };
 }
