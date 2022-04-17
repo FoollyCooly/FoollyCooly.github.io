@@ -1,6 +1,7 @@
 function voice(fileName) {
         var audio = document.createElement("audio");
         audio.src = './sound/'+fileName+'.wav';
+        audio.volume = 0.5;
         audio.play();
 }
 
@@ -261,6 +262,8 @@ function p0d(){
   };
 }
 
+//第二幕
+
 function p1a(){
   refresh();
   title.innerHTML = '🕷';
@@ -361,7 +364,7 @@ function p1e1(){
 
 function p1e2(){
   refresh();
-  createText('t1e2','啾啾~ 冒充阿狗？！<br>吃我一记十万毒特!!!',80,['spider1','spider2','spider3','spider4'],p1e2a);
+  createText('t1e2','啾啾~ 冒充阿狗？！<br>吃我一记12万毒特!!!',80,['spider1','spider2','spider3','spider4'],p1e2a);
 }
 function p1e2a(){
   restart('蛛蛛侠一招毙命<br>'+userName+'与世长辞',p1c0)
@@ -387,7 +390,7 @@ function p1f1(){
 
 function p1f2(){
   refresh();
-  createText('t1f2','啾啾~ 冒充阿狗？！<br>吃我一记银色旋风!!!',80,['spider1','spider2','spider3','spider4'],p1f2a);
+  createText('t1f2','啾啾~ 冒充阿狗？！<br>吃我一记12万毒特!!!',80,['spider1','spider2','spider3','spider4'],p1f2a);
 }
 function p1f2a(){
   restart('蛛蛛侠一招毙命<br>'+userName+'与世长辞',p1e1);
@@ -395,7 +398,7 @@ function p1f2a(){
 
 function p1f3(){
   refresh();
-  createText('t1f3','啾啾~ 猴子？！<br>吃我一记银色旋风!!!',80,['spider1','spider2','spider3','spider4'],p1f2a);
+  createText('t1f3','啾啾~ 猴子？！<br>吃我一记12万毒特!!!',80,['spider1','spider2','spider3','spider4'],p1f2a);
 }
 
 
@@ -405,7 +408,113 @@ function p1g(){
   refresh();
   setTimeout(function(){p2a();},2000);
 }
-
+//第三幕/
 function p2a(){
-  createText('t2a','未完待续~~~',80,['man1'])
+  refresh();
+  clearP();
+  setPH();
+  createText('t2a','XXXX 终于来了，我等到花儿都谢了。',30,['man1','man2','man3','man4'],p2a2);
+}
+function p2a2(){
+  createText('t2b','XXXX 鄙虫蜉弟，来者可是蛛蛛侠？',80,['man1','man2','man3','man4']);
+  creatButton('b2b0','不，我是'+userName);
+  creatButton('b2b1','不，我是阿狗');
+  creatButton('b2b1','没错，我是蛛蛛侠');
+
+  var p2a_F = setFlag(p2a,3,5,8)
+  if(p2a_F === 1){
+    setPH('上一关怎么过的你忘了吗？');
+  }else if (p2a_F === 2) {
+    setPH('想想蛛蛛侠会怎么说');
+  }else if (p2a_F === 3) {
+    setPH('啾啾~ 没错，我是蛛蛛侠');
+  }
+
+  clearP();
+  nextP[0] = function(){
+    if(theReply === '啾啾~ 没错，我是蛛蛛侠'||theReply === '啾啾~没错，我是蛛蛛侠'){
+      clearP();
+      setPH();
+      setTimeout(function(){p2b();},350);
+    }else if (theReply.search('我是阿狗') !== -1 & theReply.search('汪~') === -1) {
+      clearP();
+      setTimeout(function(){p2b1();},350);
+    }else if (theReply.search('我是蛛蛛侠') !== -1 & theReply.search('啾啾~') === -1) {
+      clearP();
+      setTimeout(function(){p2b1();},350);
+    }else if (theReply.search('我是阿狗') !== -1 & theReply.search('汪~') !== -1){
+      clearP();
+      setTimeout(function(){p2b2();},350);
+    }else if (theReply.search('我是') !== -1) {
+      clearP();
+      setTimeout(function(){p2b3();},350);
+    }else {
+      setTimeout(function(){createText('t2b1','XXXX 戏说不是胡说，请看清问题再回答。',70,['man1','man2','man3','man4']);},350);
+    }
+  };
+}
+
+function p2b(){
+  refresh();
+  createText('t2b0','XXXX 你是来取香蕉的吧。<br>村长说了，为了以防万一，你要答对一道小学数学题才能拿走香蕉。',80,['man1','man2','man3','man4'],p2c);
+}
+
+function p2b1(){
+  refresh();
+  createText('t2b1','XXXX 好拙劣的Cosplay，看来是村长过度小心了...<br>一刻千金，我没功夫跟猴子耽误，请你有多远爬多远。',80,['man1','man2','man3','man4'],p2b_back);
+}
+function p2b2(){
+  refresh();
+  createText('t2b2','XXXX 阿狗，你来作甚？<br>一刻千金，我没功夫跟你耽误，请你有多远爬多远。',80,['man1','man2','man3','man4'],p2b_back);
+}
+function p2b3(){
+  refresh();
+  createText('t2b3','XXXX 不认识你，自己一边玩去吧。',80,['man1','man2','man3','man4'],p2b_back);
+}
+function p2b_back(){
+  restart('蜉弟转头就走，消失在水中央<br>'+userName+"应该多多使用它的大脑",p2a);
+}
+
+function p2c(){
+  refresh();
+  var multi1 = Math.floor(Math.random()*3)+5;
+  var multi2 = Math.floor(Math.random()*5)+3;
+  var answer = (multi1*multi2).toString(8);
+  createText('t2c','请听题：<br>'+ multi1 +' × '+ multi2 +' = ?',80,['man1','man2','man3','man4']);
+  setPH('直接在此输入数字');
+  nextP[0] = function(){
+    if (theReply === answer) {
+      clearP();
+      p2d();
+    }else if (theReply === '数字') {
+      setTimeout(function(){createText('t2c1','XXXX 脑洞不错。<br>但阅卷老师还是会给你零分。',50,['man1','man2','man3','man4']);},60);
+    }else if (theReply === (multi1*multi2).toString(10)) {
+      clearP();
+      p2d1();
+    }else if (theReply.search('\D' !== -1)) {
+      setTimeout(function(){createText('t2c1','XXXX 请用阿拉伯数字。',50,['man1','man2','man3','man4']);},60);
+    }else{
+      clearP();
+      p2d2();
+    }
+  }
+}
+
+function p2d(){
+  refresh();
+  createText('t2d','XXXX 回答正确！<br>未完待续......',80,['man1','man2','man3','man4']);
+}
+function p2d1(){
+  refresh();
+  createText('t2d','XXXX 数学挺不错啊...作为一只猴子来说。<br>看来村长的顾虑果然是有道理的。',80,['man1','man2','man3','man4'],p2d1_back);
+}
+function p2d1_back(){
+  restart('到底是哪里暴露了呢？<br>'+userName+"用它的十根手指抓耳挠腮<br>真是百思不得其解",p2c);
+}
+function p2d2(){
+  refresh();
+  createText('t2d','XXXX 想通过蒙答案过关吗？<br>还是说你的数学真有这么差劲？',80,['man1','man2','man3','man4'],p2d2_back);
+}
+function p2d2_back(){
+  restart('到底是哪里出错了呢？<br>'+userName+"用它的十根手指抓耳挠腮<br>真是百思不得其解",p2c);
 }
