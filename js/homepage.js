@@ -317,7 +317,6 @@ function p1c2(){
   refresh();
   createText('t1c1','啾啾~ 没听说过你的名字。村长说了，不能跟陌生动物交谈。你还是离我远点吧。',80,['spider1','spider2','spider3','spider4'],p1c2a);
 }
-
 function p1c2a(){
   restart('蛛蛛侠不理你了<br>'+userName+'有没有什么办法能跟蛛蛛侠说上话呢？',p1a)
 }
@@ -364,7 +363,6 @@ function p1e2(){
   refresh();
   createText('t1e2','啾啾~ 冒充阿狗？！<br>吃我一记十万毒特!!!',80,['spider1','spider2','spider3','spider4'],p1e2a);
 }
-
 function p1e2a(){
   restart('蛛蛛侠一招毙命<br>'+userName+'与世长辞',p1c0)
 }
@@ -372,7 +370,7 @@ function p1e2a(){
 function p1f1(){
   clearP();
   refresh();
-  createText('t1f1','啾啾~ 村长要在我家开【香蕉展】，我提前清理一下蛛网。<br>待会我还要去小河边把【香蕉】拿过来。村长不放心，非让我亲自去呢。<br>话说，阿狗没听说吗？村长不让我们跟陌生动物说话，好像就是因为【香蕉展】的事呢。',80,['spider1','spider2','spider3','spider4']);
+  createText('t1f1','啾啾~ 村长要在我家开【香蕉展】，我提前清理一下蛛网。<br>待会我还要去小河边把【香蕉】拿过来。村长不放心，非让我亲自去呢。<br>话说，阿狗没听说吗？村长不让我们跟陌生动物说话，好像就是因为【香蕉展】的事呢。',50,['spider1','spider2','spider3','spider4']);
   creatButton('b1e1','这样啊。那我就不打扰了，你先忙吧。');
   nextP[0] = function(){
     if (theReply.search('汪~') === -1) {
@@ -391,15 +389,16 @@ function p1f2(){
   refresh();
   createText('t1f2','啾啾~ 冒充阿狗？！<br>吃我一记银色旋风!!!',80,['spider1','spider2','spider3','spider4'],p1f2a);
 }
-
 function p1f2a(){
-  restart('蛛蛛侠一招毙命<br>'+userName+'与世长辞',p1c0)
+  restart('蛛蛛侠一招毙命<br>'+userName+'与世长辞',p1e1);
 }
 
 function p1f3(){
   refresh();
   createText('t1f3','啾啾~ 猴子？！<br>吃我一记银色旋风!!!',80,['spider1','spider2','spider3','spider4'],p1f2a);
 }
+
+
 
 function p1g(){
   tip(userName + '告别了蛛蛛侠<br>' + userName + '往小河边走去...');
