@@ -413,10 +413,10 @@ function p2a(){
   refresh();
   clearP();
   setPH();
-  createText('t2a','XXXX 终于来了，我等到花儿都谢了。',30,['man1','man2','man3','man4'],p2a2);
+  createText('t2a','忧矣~ 终于来了，我等到花儿都谢了。',30,['man1','man2','man3','man4'],p2a2);
 }
 function p2a2(){
-  createText('t2b','XXXX 鄙虫蜉弟，来者可是蛛蛛侠？',80,['man1','man2','man3','man4']);
+  createText('t2b','忧矣~ 鄙虫蜉弟，来者可是蛛蛛侠？',80,['man1','man2','man3','man4']);
   creatButton('b2b0','不，我是'+userName);
   creatButton('b2b1','不，我是阿狗');
   creatButton('b2b1','没错，我是蛛蛛侠');
@@ -449,27 +449,27 @@ function p2a2(){
       clearP();
       setTimeout(function(){p2b3();},350);
     }else {
-      setTimeout(function(){createText('t2b1','XXXX 戏说不是胡说，请看清问题再回答。',70,['man1','man2','man3','man4']);},350);
+      setTimeout(function(){createText('t2b1','忧矣~ 戏说不是胡说，请看清问题再回答。',70,['man1','man2','man3','man4']);},350);
     }
   };
 }
 
 function p2b(){
   refresh();
-  createText('t2b0','XXXX 你是来取香蕉的吧。<br>村长说了，为了以防万一，你要答对一道小学数学题才能拿走香蕉。',80,['man1','man2','man3','man4'],p2c);
+  createText('t2b0','忧矣~ 你是来取香蕉的吧。<br>村长说了，为了以防万一，你要答对一道小学数学题才能拿走香蕉。',80,['man1','man2','man3','man4'],p2c);
 }
 
 function p2b1(){
   refresh();
-  createText('t2b1','XXXX 好拙劣的Cosplay，看来是村长过度小心了...<br>一刻千金，我没功夫跟猴子耽误，请你有多远爬多远。',80,['man1','man2','man3','man4'],p2b_back);
+  createText('t2b1','忧矣~ 好拙劣的Cosplay，看来是村长过度小心了...<br>一刻千金，我没功夫跟猴子耽误，请你有多远爬多远。',80,['man1','man2','man3','man4'],p2b_back);
 }
 function p2b2(){
   refresh();
-  createText('t2b2','XXXX 阿狗，你来作甚？<br>一刻千金，我没功夫跟你耽误，请你有多远爬多远。',80,['man1','man2','man3','man4'],p2b_back);
+  createText('t2b2','忧矣~ 阿狗，你来作甚？<br>一刻千金，我没功夫跟你耽误，请你有多远爬多远。',80,['man1','man2','man3','man4'],p2b_back);
 }
 function p2b3(){
   refresh();
-  createText('t2b3','XXXX 不认识你，自己一边玩去吧。',80,['man1','man2','man3','man4'],p2b_back);
+  createText('t2b3','忧矣~ 不认识你，自己一边玩去吧。',80,['man1','man2','man3','man4'],p2b_back);
 }
 function p2b_back(){
   restart('蜉弟转头就走，消失在水中央<br>'+userName+"应该多多使用它的大脑",p2a);
@@ -477,22 +477,31 @@ function p2b_back(){
 
 function p2c(){
   refresh();
+  var p2c_F = setFlag(p2c,5,10)
+  if(p2a_F === 1){
+    setPH('蛛蛛侠说它有‘10’条腿');
+  }else if (p2a_F === 2) {
+    setPH('蛛蛛用的当然是八进制啦');
+  }
+
+
   var multi1 = Math.floor(Math.random()*3)+5;
   var multi2 = Math.floor(Math.random()*5)+3;
   var answer = (multi1*multi2).toString(8);
-  createText('t2c','请听题：<br>'+ multi1 +' × '+ multi2 +' = ?',80,['man1','man2','man3','man4']);
+  createText('t2c','忧矣~ 请听题：<br>'+ multi1 +' × '+ multi2 +' = ?',80,['man1','man2','man3','man4']);
   setPH('直接在此输入数字');
   nextP[0] = function(){
     if (theReply === answer) {
+      setPH();
       clearP();
       p2d();
     }else if (theReply === '数字') {
-      setTimeout(function(){createText('t2c1','XXXX 脑洞不错。<br>但阅卷老师还是会给你零分。',50,['man1','man2','man3','man4']);},60);
+      setTimeout(function(){createText('t2c1','忧矣~ 脑洞不错。<br>但阅卷老师还是会给你零分。',50,['man1','man2','man3','man4']);},60);
     }else if (theReply === (multi1*multi2).toString(10)) {
       clearP();
       p2d1();
     }else if (theReply.search('\D' !== -1)) {
-      setTimeout(function(){createText('t2c1','XXXX 请用阿拉伯数字。',50,['man1','man2','man3','man4']);},60);
+      setTimeout(function(){createText('t2c1','忧矣~ 请用阿拉伯数字。',50,['man1','man2','man3','man4']);},60);
     }else{
       clearP();
       p2d2();
@@ -500,20 +509,30 @@ function p2c(){
   }
 }
 
+function timer(timeValve){
+  seconds = 0;
+  setInterval(function(){
+    seconds++;
+    if (seconds === timeValve) {
+      clearInterval();
+    }
+  },1000)
+}
+
 function p2d(){
   refresh();
-  createText('t2d','XXXX 回答正确！<br>未完待续......',80,['man1','man2','man3','man4']);
+  createText('t2d','忧矣~ 回答正确！<br>未完待续......',80,['man1','man2','man3','man4']);
 }
 function p2d1(){
   refresh();
-  createText('t2d','XXXX 数学挺不错啊...作为一只猴子来说。<br>看来村长的顾虑果然是有道理的。',80,['man1','man2','man3','man4'],p2d1_back);
+  createText('t2d','忧矣~ 数学挺不错啊...作为一只猴子来说。<br>看来村长的顾虑果然是有道理的。',80,['man1','man2','man3','man4'],p2d1_back);
 }
 function p2d1_back(){
   restart('到底是哪里暴露了呢？<br>'+userName+"用它的十根手指抓耳挠腮<br>真是百思不得其解",p2c);
 }
 function p2d2(){
   refresh();
-  createText('t2d','XXXX 想通过蒙答案过关吗？<br>还是说你的数学真有这么差劲？',80,['man1','man2','man3','man4'],p2d2_back);
+  createText('t2d','忧矣~ 想通过蒙答案过关吗？<br>还是说你的数学真有这么差劲？',80,['man1','man2','man3','man4'],p2d2_back);
 }
 function p2d2_back(){
   restart('到底是哪里出错了呢？<br>'+userName+"用它的十根手指抓耳挠腮<br>真是百思不得其解",p2c);
