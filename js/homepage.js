@@ -478,9 +478,9 @@ function p2b_back(){
 function p2c(){
   refresh();
   var p2c_F = setFlag(p2c,5,10)
-  if(p2a_F === 1){
+  if(p2c_F === 1){
     setPH('蛛蛛侠说它有‘10’条腿');
-  }else if (p2a_F === 2) {
+  }else if (p2c_F === 2) {
     setPH('蛛蛛用的当然是八进制啦');
   }
 
@@ -500,7 +500,7 @@ function p2c(){
     }else if (theReply === (multi1*multi2).toString(10)) {
       clearP();
       p2d1();
-    }else if (theReply.search('\D' !== -1)) {
+    }else if (theReply.search(/\D/) !== -1) {
       setTimeout(function(){createText('t2c1','忧矣~ 请用阿拉伯数字。',50,['man1','man2','man3','man4']);},60);
     }else{
       clearP();
