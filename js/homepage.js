@@ -272,7 +272,7 @@ function p1b(){
   creatButton('b1b0','我是'+userName);
   creatButton('b1b1','我是阿狗');
 
-  var p1b_F = setFlag(p1b,3,5,7)
+  var p1b_F = setFlag(p1b,3,5,8)
   if(p1b_F === 1){
     setPH('要装的更像一点');
   }else if (p1b_F === 2) {
