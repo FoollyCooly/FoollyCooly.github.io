@@ -1,0 +1,75 @@
+@font-face {
+    font-family: hige;
+    src: url('F5AJCHIG-2.ttf');
+}
+
+@font-face {
+    font-family: mpo;
+    src: url('MochiyPopOne-Regular.ttf');
+}
+
+.big_title {
+    font-size: 7rem;
+    font-family: hige;
+}
+
+.main_text {
+    font-size: 2rem;
+    font-family: mpo;
+}
+
+.banner {
+    padding: 4rem;
+    position: relative;
+    background-image: url(../img/lookback/bg-gradient.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.intro{
+    position: relative;
+    background-color:rgba(70,80,90,0.9);
+    background-blend-mode:overlay;
+}
+
+.subtitle{
+    font-family: mpo;
+    font-size: 6rem;
+}
+
+.detail_text{
+    font-family: mpo;
+    font-size: 1rem;
+}
+
+.gallery{
+    position: relative;
+
+}
+
+.comments{
+    position:relative;
+    background-color: rgba(0,0,0,0.92);
+}
+
+.shopping{
+    position: relative;
+}
+
+.shopping_card{
+    font-family: mpo;
+    font-size: 1.5rem;
+
+}
+
+.card_title{
+    font-size: 3rem;
+    font-family: mpo;
+    color: crimson;
+}
+.card_detail{
+    font-size: 1rem;
+    font-family: mpo;
+}
