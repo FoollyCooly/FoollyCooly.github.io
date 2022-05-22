@@ -8,10 +8,12 @@
     src: url('MochiyPopOne-Regular.ttf');
 }
 
+
 .big_title {
     font-size: 7rem;
     font-family: hige;
 }
+
 
 .main_text {
     font-size: 2rem;
@@ -60,7 +62,7 @@
 
 .shopping_card{
     font-family: mpo;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 
 }
 
@@ -72,4 +74,42 @@
 .card_detail{
     font-size: 1rem;
     font-family: mpo;
+}
+
+.manga{
+    transition: all 0.5s;
+}
+
+.manga:hover{
+    filter: sepia(0.4) brightness(0.95);
+    transform: scale(1.05);
+}
+
+.shopping .card{
+    transition: all 0.5s;
+}
+
+.shopping .card:hover{
+    transform: scale(1.05);
+    filter:brightness(1.05);
+}
+@media screen and (max-width:992px){
+    html{
+        font-size: 13px;
+    }
+
+}
+
+@media screen and (max-width:768px){
+    html{
+        font-size: 11px;
+    }
+
+}
+
+@media screen and (max-width:576px) {
+    html{
+        font-size: 9px;
+    }
+
 }
