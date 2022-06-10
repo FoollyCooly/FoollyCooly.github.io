@@ -23,6 +23,7 @@
 
 <body>
   <section class="text-center text-nowrap banner m-0">
+
     <img
       class="manga"
       style="position:absolute;left:0%;top: 0%;transform-origin: left top;"
@@ -176,11 +177,11 @@
         <div class="col-12 col-xl-9">
           <div class="row g-5">
             <div>
-              <div class="d-block d-xl-none mb-5">            <img
-                class="w-100"
-                src="./img/lookback/syou-lateral.png"
-                alt=""
-              ></div>
+              <div class="d-block d-xl-none mb-5"> <img
+                  class="w-100"
+                  src="./img/lookback/syou-lateral.png"
+                  alt=""
+                ></div>
               <div class="card bg-dark text-light">
                 <div class="card-header text-center card_title text-nowrap">「このマンガがすごい」第一位！！</div>
                 <div class="card-body px-5 card_detail">
@@ -415,6 +416,13 @@
       };
       // console.log(manga_width);
 
+      $('.banner').mousemove(function (e) {
+        var motion_rate = 0.85;
+        var x = (e.pageX / $(window).width()-0.5)*motion_rate;
+        $(this).css('background-position', (-x+0.5) * 100 + '% 100%');
+        // console.log(x);
+      });
+
       $(window).scroll(function () {
         var altitude = $(document).scrollTop();
         var max_altitude = $(document).height() - $(window).height() - ($("#backBottom_img").height() - $("#back_img").height() * 1774 / 774);
@@ -429,7 +437,6 @@
           $("#back_img").css("display", "block");
           $("#backBottom_img").css("opacity", "0%");
         }
-
       });
 
       $(window).resize(function () {

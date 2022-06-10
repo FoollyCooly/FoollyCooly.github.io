@@ -23,9 +23,10 @@
 .banner {
     padding: 4rem;
     position: relative;
-    background-image: url(../img/lookback/bg-gradient.png);
+    background-image: url(../img/lookback/bg-none.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 140% 100%;
+    background-position: 50%;
     padding-top: 7rem;
     padding-bottom: 7rem;
 }
