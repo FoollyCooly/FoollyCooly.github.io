@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <!-- 国内 Staticfile CDN 上的 Bootstrap5 核心 CSS 文件 -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css"
+  >
+  <link
+    rel="stylesheet"
+    href="./css/youlu.css"
+  >
+
+  <script
+    src="https://kit.fontawesome.com/9276d37eba.js"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"
+  ></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css"
+    rel="stylesheet"
+    type="text/css"
+  >
+  <style type="text/css">
+    .container-fluid {
+      padding-left: 8%;
+      padding-right: 2%;
+    }
+
+    @media screen and (max-width:768px) {
+      .container-fluid {
+        padding-left: 6%;
+        padding-right: 1.5%;
+      }
+    }
+
+    @media screen and (max-width:576px) {
+      .container-fluid {
+        padding-left: 4%;
+        padding-right: 1%;
+      }
+    }
+  </style>
+  <title>目标详情页</title>
+  <link rel="icon" href="favicon.ico">
+  </head>
+
+  <body class="body-bg">
+
+  <!---这是导航栏--->
+  <nav class="navbar navbar-expand-md nav mb-5">
+    <div class="container-fluid">
+      <a
+        class="navbar-brand"
+        href="index.html"
+        target="_blank"
+      >
+        有 鹿 🦌
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="careerPlanning.html"
+              target="_blank"
+            >&nbsp;探索鹿径&nbsp;</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="jobCollection.html"
+              target="_blank"
+            >&nbsp;职业总览&nbsp;</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="lu2.html"
+              target="_blank"
+            >&nbsp;我的鹿径</a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-9  details">
+        <!-- 在外面套个框 -->
+        <section class="border-main py-2 px-5 bg-light">
+          <div class="py-2 px-5">
+            <h1 align="center">工商管理硕士</h1>
+          </div>
+          <div class="row">
+            <h4>为什么你需要成为工商管理硕士(why)</h4>
+            <div class="row middle">
+              <div class="col-12 col-lg-8">
+                <ul>
+                  <li>你的本科学历为市场营销学，修读一个工商管理硕士会增加你的竞争力。</li>
+                  <li>猎头追求多元化背景，你的本科学历在考取工商管理硕士时会成为优势。</li>
+                  <li>猎头需要丰富的实践经历，修读硕士可以丰富你的经历。</li>
+                </ul>
+              </div>
+              <div class="my-2 d-block d-lg-none"></div>
+
+              <div class="col-12 col-lg-4">
+                <p align="center">从业者占比</p>
+                <div align="center">
+                  <div id="chart_1"></div>
+                </div>
+              </div>
+            </div>
+            <hr>
+
+            <h4>工商管理硕士是什么(what)</h4>
+            <div class="row middle">
+            <div class="col-12 col-lg-6">
+              <video
+               class="w-100"
+                src="https://upos-sz-mirrorcos.bilivideo.com/upgcxcode/65/37/415173765/415173765-1-208.mp4?e=ig8euxZM2rNcNbN1hzdVhwdlhbRzhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1657650022&gen=playurlv2&os=cosbv&oi=17808763&trid=b6dab67b0a814a3686e2814ed8d9273eT&mid=0&platform=html5&upsig=1a7bc43683e2ffd617f7971505f6a48a&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&bvc=vod&nettype=0&bw=213558&orderid=0,1&logo=80000000"
+                controls
+              >
+            </div>
+            <div class="my-2 d-block d-lg-none"></div>
+            <div class="col-12 col-lg-6">
+              <p>工商管理硕士，全称为工商管理专业型硕士研究生（英文名：Master of Business Administration，简称MBA）。是对应工商管理学术型硕士的专业学位硕士，该学位的设立，旨在培养未来能够胜任工商企业和经济管理部门高层管理工作需要的务实型、复合型和应用型高层次管理人才。</p>
+              <div>
+              </div>
+            </div>
+          </div>
+            <hr>
+
+            <h4>怎么成为工商管理硕士(how)</h4>
+            <div class="col-12">
+              <ul>
+                <li>你的本专业为市场营销学，可以争取同专业保研获得工商管理硕士学位。</li>
+                <li>你可以通过参加全国研究生统一招生考试获得工商管理硕士学位。</li>
+                <li>你可以通过申请海外高校的研究生项目获得工商管理硕士学位。</li>
+              </ul>
+            </div>
+            <hr>
+
+            <h4>何时开始准备(when)</h4>
+            <div class="row middle">
+              <div class="col-12 col-lg-8">
+                <p>根据你目前的专业和成绩，建议你从现在开始准备保研，努力保持较高的绩点。
+同时，如果学有余力，还可以同步学习托福/雅思，做两手准备。在课业压力不大的时候，寻找科研机会和实习机会，丰富自己的阅历。
+想了解更多请点击右侧按钮，与业内资深专家一对一交流。</p>
+              </div>
+              <div class="my-2 d-block d-lg-none"></div>
+              <div
+                class="col-12 col-lg-4"
+                align="center"
+              >
+                <!-- Button trigger modal -->
+                  <button class="btn btn-main" data-bs-toggle="modal" data-bs-target="#staticBackdrop">一对一咨询</button>
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">失败</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        对不起，您还没有购买一对一咨询服务，请付费后重试。
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+
+          </div>
+      </div>
+      <!-- 机选机构 -->
+      <div class="col-3">
+        <div class="border-main fixed cm p-2">
+          <div class="pt-2">
+            <h1>精选机构</h1>
+          </div>
+          <hr>
+
+          <a href="https://kaoyan.koolearn.com/" target="_blank">
+          <div class="row cm-card m-1 middle">
+            <div class="col-4 p-0 d-none d-md-block">
+              <img src='https://i.bmp.ovh/imgs/2022/07/03/5e15a31ffdc38cbb.png'>
+            </div>
+            <div class="col-12 col-md-8 p-0 text-center">
+              <h4>新东方考研</h4>
+              <p>专注教育28年<br>你的信赖之选</p>
+            </div>
+          </div>
+          </a>
+
+          <a href="https://sh.wendu.com/zt/kyty/" target="_blank">
+          <div class="row cm-card m-1 middle">
+            <div class="col-4 p-0 d-none d-md-block">
+              <img src='https://i.bmp.ovh/imgs/2022/07/03/5e15a31ffdc38cbb.png'>
+            </div>
+            <div class="col-12 col-md-8 p-0 text-center">
+              <h4>文都教育</h4>
+              <p>一站式考研机构<br>帮人帮到底</p>
+            </div>
+          </div>
+        </a>
+
+          <a href="http://zt.wanxue.cn/" target="_blank">
+          <div class="row cm-card m-1 middle">
+            <div class="col-4 p-0 d-none d-md-block">
+              <img src='https://i.bmp.ovh/imgs/2022/07/03/5e15a31ffdc38cbb.png'>
+            </div>
+            <div class="col-12 col-md-8 p-0 text-center">
+              <h4>海文考研</h4>
+              <p>让考研不走弯路<br></p>
+            </div>
+          </div>
+          </a>
+
+          <a href="http://www.vipqihang.com/" target="_blank">
+          <div class="row cm-card m-1 middle">
+            <div class="col-4 p-0 d-none d-md-block">
+              <img src='https://i.bmp.ovh/imgs/2022/07/03/5e15a31ffdc38cbb.png'>
+            </div>
+            <div class="col-12 col-md-8 p-0 text-center">
+              <h4>启航教育</h4>
+              <p>值得信赖的<br>留学教育机构</p>
+            </div>
+          </div>
+          </a>
+
+          <a href="http://www.htkaoyan.com/" target="_blank">
+          <div class="row cm-card m-1 middle">
+            <div class="col-4 p-0 d-none d-md-block">
+              <img src='https://i.bmp.ovh/imgs/2022/07/03/5e15a31ffdc38cbb.png'>
+            </div>
+            <div class="col-12 col-md-8 p-0 text-center">
+              <h4>海天教育</h4>
+              <p>中国领先的<br>教育辅导品牌</p>
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <br>
+
+
+  <!---这是footer--->
+  <div class="container-fluid footer mt-5">
+    <footer>
+      <br>
+      <div class="copyright">
+        &copy; Copyright <strong>YOULU</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="index.html" target="_blank">youlu</a>
+      </div>
+      <br>
+    </footer>
+  </div>
+
+
+  <!-- 国内 Staticfile CDN 上的 Bootstrap5 核心 JavaScript 文件 -->
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script
+    src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.3/js/bootstrap.bundle.min.js"
+    type="application/javascript"
+  ></script>
+
+
+  <script>
+    // 背景移动
+    $('.body-bg').mousemove(function (e) {
+      var motion_rate = 0.07;
+      var x = (e.screenX / $(window).width() - 0.5) * motion_rate;
+      var y = (e.screenY / $(window).height() - 0.5) * motion_rate;
+      $(this).css('background-position', (-x + 0.5) * 100 + '%' + (-y + 0.5) * 100 + "%");
+    });
+
+    // 固定（fixed类）
+    var fix_height = $(".fixed").offset().top;
+    $(window).scroll(function () {
+        if ($(document).scrollTop() >= fix_height) {
+          $(".fixed").css("transform", "translateY(" + ($(document).scrollTop() - fix_height +20) + "px)");
+        } else {
+          $(".fixed").css("transform", "none");
+        }
+      });
+
+    // 从业者占比图表
+    var chart_1 = c3.generate({
+      bindto: '#chart_1',
+      data: {
+        columns: [
+          ['相关专业本科', 30],
+          ['相关专业硕士', 60],
+          ['相关专业博士', 10],
+          ['其他专业硕士', 120],
+          ['其他专业本科', 10],
+        ],
+        type: 'pie',
+        onclick: function (d, i) { console.log("onclick", d, i); },
+        onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+        onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+      },
+      size:{
+      'height': 220
+      }
+    });
+
+  </script>
+
+</body>
+
+
+</html>

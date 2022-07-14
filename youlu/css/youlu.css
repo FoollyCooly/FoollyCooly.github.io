@@ -1,0 +1,746 @@
+@font-face {
+    font-family: "yuehei";
+    src: url('YueHei.ttf');
+}
+
+.body-bg {
+    background-image: url(../img/background.png);
+    background-size: 30%;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+/* 导航栏 */
+.nav {
+    background-color: #3A745F;
+    font-family: "yuehei";
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
+
+}
+
+.nav a {
+    color: #F2CB6C;
+    text-decoration: none;
+    transition: all 0.5s;
+    font-size: 2rem;
+}
+
+.nav .nav-link {
+    filter: contrast(0.88);
+    font-size: 1.5rem;
+}
+
+
+.nav .nav-link:hover {
+    color: #b4aa99;
+}
+
+.nav .nav-link:focus{
+    color:#F2CB6C;
+}
+
+.nav .navbar-toggler {
+    border-color: #4D4637;
+}
+
+.nav .navbar-toggler-icon {
+    background-image: url(https://www.svgrepo.com/show/417897/menu-1.svg);
+}
+
+
+/* 步骤条 */
+.steps {
+    font-family: "youyuan";
+    cursor: pointer;
+    transform: skewX(-25deg);
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: all 0.5s;
+    background-color: #B4AA99;
+    border-radius: 0.25rem;
+    z-index: 1;
+    box-shadow: 0px 15px 30px rgba(109, 109, 109, 0.3);
+}
+
+.steps-middle {
+    transform: scaleX(1.25);
+    z-index: 0;
+}
+
+.steps-last {
+    position: relative;
+    transform: skewX(25deg);
+    z-index: 1;
+}
+
+.steps-visited {
+    background-color: #3A745F;
+}
+
+
+.steps h4 {
+    transform: skewX(25deg);
+}
+
+.steps-middle h4 {
+    transform: scaleX(0.8);
+}
+
+.steps-last h4 {
+    transform: skewX(-25deg);
+}
+
+.steps h4 span {
+    font-size: calc(1.5rem + .5vw);
+}
+
+.steps a {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.steps:hover {
+    background-color: #374B43;
+}
+
+/* 翻页按钮 */
+.btn-page {
+    cursor: pointer;
+    position: fixed;
+    width: 100%;
+    bottom: 33%;
+    transition: all 0.8s;
+}
+
+.btn-page div {
+    position: absolute;
+    width: 6vw;
+    height: 6vw;
+    background-color: rgba(99, 204, 156, 0.75);
+    border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    transition: all 0.8s;
+}
+
+.btn-page div:hover {
+    transform: scale(1.2);
+    background-color: rgba(58, 116, 95, 0.9);
+}
+
+.btn-page img {
+    width: 4vw;
+    height: 4vw;
+    top: 1vw;
+    filter: invert();
+}
+
+#btn-back {
+    display: none;
+    left: 1vw;
+}
+
+#btn-back img {
+    transform: translateY(1vw) rotate(-90deg);
+}
+
+#btn-next {
+    right: 1vw;
+}
+
+#btn-next img {
+    transform: translateY(1vw) rotate(90deg);
+}
+
+/* 边框 */
+.border-main {
+    border-radius: 0.25rem;
+    border-style: groove;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.3);
+}
+
+
+/* 按钮 */
+.btn-main {
+    white-space:nowrap;
+    font-size: 2rem;
+    background-color: #3A745F;
+    color: #fff;
+    border: none;
+    transition: all 0.5s;
+}
+
+.btn-vice {
+    background-color: #3A745F;
+    color: #fff;
+    border: none;
+    transition: all 0.5s;
+}
+
+.btn-main:hover,.btn-vice:hover {
+    color: #fff;
+    background-color: #374B43;
+}
+
+/* 卡片开关 */
+:root {
+    --button-width: 7rem;
+    --button-height: 3rem;
+    --toggle-diameter: 2.5rem;
+    --button-toggle-offset: calc((var(--button-height) - var(--toggle-diameter)) / 2);
+    --toggle-shadow-offset: 0.15rem;
+    --toggle-wider: 2.8rem;
+    --color-grey: #E9E9E9;
+    --color-dark-grey: #7d7d7d;
+    --color-green: #E9E9E9;
+}
+
+.switch{
+    cursor: pointer;
+}
+
+.switch span {
+    display: inline-block;
+    width: var(--button-width);
+    height: var(--button-height);
+    background-color: var(--color-grey);
+    border-radius: calc(var(--button-height) / 2);
+    position: relative;
+    transition: .3s all ease-in-out;
+}
+
+.switch span::after {
+    content: '';
+    display: inline-block;
+    width: var(--toggle-diameter);
+    height: var(--toggle-diameter);
+    background-color: #fff;
+    border-radius: calc(var(--toggle-diameter) / 2);
+    position: absolute;
+    left:0%;
+    top: var(--button-toggle-offset);
+    transform: translateX(var(--button-toggle-offset));
+    box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, .10);
+    transition: .3s all ease-in-out;
+}
+
+.switch input[type="checkbox"]:checked+span {
+    background-color: var(--color-green);
+}
+
+.switch input[type="checkbox"]:checked+span::after {
+    transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
+    box-shadow: calc(var(--toggle-shadow-offset) * -1) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, .10);
+}
+
+.switch input[type="checkbox"] {
+    display: none;
+}
+
+.switch input[type="checkbox"]:active+span::after {
+    width: var(--toggle-wider);
+}
+
+.switch input[type="checkbox"]:checked:active+span::after {
+    transform: translateX(calc(var(--button-width) - var(--toggle-wider) - var(--button-toggle-offset)));
+}
+
+/* 卡片 */
+
+.card-switch{
+    font-family: "yuehei";
+    margin-top: 3%;
+    margin-bottom: 3%;
+    transition: all 0.8s;
+    cursor: pointer;
+}
+.card-switch .card-title{
+    font-size: 1.2vw;
+    font-weight:500;
+    border-radius: 0.25rem;
+    box-shadow: 0px 0px 0.25rem rgba(15, 15, 15, 0.3) inset;
+    color: black;
+    background-color:rgba(255, 255, 255, .40);
+}
+
+.card-switch .card-choice{
+    display:flex;
+    position: relative;
+    height:5rem;
+    max-height: 5rem;
+    background-position: center;
+    /* background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../image/deer/deer-2.svg); */
+}
+
+.card-switch .card-choice span{
+    position: absolute;
+    font-size: 2vw;
+    opacity: 0.7;
+    align-self:center;
+    transition: all 0.5s;
+}
+
+.card-switch .card-choice .choice_1{
+    left: 15%;
+}
+
+.card-switch .card-choice .choice_2{
+    right: 15%;
+}
+/* 信息卡片 */
+.info{
+    display: none;
+}
+
+.card-info {
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.12);
+    border-radius: 0.25rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 0.5rem;
+    background-color: #fff;
+    text-align: center;
+    transition: all 0.8s;
+    height: 14rem;
+    cursor: pointer;
+}
+
+.card-info h4{
+    font-family: "yuehei";
+    font-size: 3rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    transition: all 0.8s;
+    white-space:nowrap;
+}
+
+.card-info input{
+    font-family: "yuehei";
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 3rem;
+    font-weight: 500;
+    height: 4rem;
+    width: 66%;
+    border-color: rgba(0, 0, 0, .0);
+    color: #F2CB6C;
+    white-space: nowrap;
+    transition: all 0.8s;
+
+}
+
+.card-info input::-webkit-input-placeholder{
+    color: #e7e7e7;
+    /* font-size: 2rem; */
+    /* text-decoration:dotted; */
+}
+
+.card-info:hover {
+    background-color: #3A745F;
+}
+
+.card-info:hover h4{
+    color: #F2CB6C;
+    font-size: 3.25rem;
+}
+
+.card-info:hover input{
+    color: #7d7d7d;
+    margin-top: 1rem;
+    font-size: 2.5rem;
+}
+
+
+/* 职业卡片 */
+.job{
+    display: none;
+}
+.card-job{
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.12);
+    border-radius: 0.25rem;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 0.5rem;
+    background-color: #fff;
+    transition: all 0.8s;
+    height: 15rem;
+}
+
+.card-job img {
+    width: 8rem;
+    height: 8rem;
+    transition: all 0.5s;
+}
+
+.card-job h4 {
+    font-family: "yuehei";
+    font-size: 3rem;
+    margin-top: 1rem;
+    transition: all 0.8s;
+    white-space:nowrap;
+}
+
+.card-job ul{
+    /* display:none; */
+    opacity: 0;
+    white-space: nowrap;
+    font-family: "youyuan";
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    padding: 0;
+    list-style-position: inside;
+    transform: translateY(-7rem);
+    transition: all 0.8s;
+}
+
+.card-job:hover{
+    background-color: #3A745F;
+    box-shadow: 0px 0px 30px rgba(57, 57, 57, 0.12);
+}
+
+.card-job:hover img{
+    transform: scale(1.1) translateY(1rem);
+    opacity: 0;
+
+}
+
+.card-job:hover h4{
+    color: #F2CB6C;
+    font-size: 3.2rem;
+    transform: translateY(-7rem);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-job:hover ul{
+    /* display: block; */
+    opacity: 100%;
+}
+
+/* 详情页 */
+.details p{
+    font-family: YouYuan;
+    font-size:1.2rem;
+    margin: 0;
+}
+.details h1{
+    color: #F2CB6C;
+    text-align: center;
+    font-family: "yuehei";
+    font-size: 3rem;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.details h4{
+    color: #3A745F;
+    text-align: start;
+    font-family: "yuehei";
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.details ul{
+    font-family: youyuan;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+    color:lightslategrey;
+}
+
+
+.details hr{
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+/* 精选机构 */
+.cm {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.cm h1{
+    text-align: center;
+    font-family: "yuehei";
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    margin-top: 0.6rem;
+}
+
+.cm .cm-card{
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border-style:solid;
+    border-color: #7d7d7d;
+    border-width: 0.05rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.cm .cm-card:hover{
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.12);
+    transform: scale(1.02);
+}
+
+.cm .cm-card img{
+    width: 5vw;
+}
+
+.cm .cm-card h4{
+    color: #3A745F;
+    font-weight: 700;
+    font-size: 1.25vw;
+    padding-top: 0;
+    padding-bottom: 0.25vw;
+    margin: 0;
+}
+
+.cm .cm-card p{
+    white-space: nowrap;
+    font-size: 1vw;
+    margin: 0;
+}
+
+.progress{
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    margin-top: 1rem;
+}
+
+.progress-bar{
+    font-size: 0.5rem;
+}
+
+/* 职业大全 */
+.jobCollection {
+    background-color: rgba(255, 255, 255, .80);
+    padding: 1rem;
+}
+
+.jobCollection h1{
+    text-align: center;
+    font-family: "yuehei";
+    color: #3A745F;
+    font-size: 4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 咨询 */
+.consult {
+    font-size: 1.5rem;
+    font-family: "youyuan";
+    margin: 0;
+}
+
+/* 路径图 */
+
+#road-title{
+    margin-bottom: 1rem;
+    font-family: "yuehei";
+
+}
+
+#road-title a{
+    color:#3A745F;
+    transition: all 0.5s;
+}
+
+#road-title a:hover{
+    color: #60a78d;
+}
+
+.road {
+    padding: 0;
+    position: relative;
+    height: 60vh;
+    background-color: rgba(58, 116, 95, .60);
+    margin: 0;
+    overflow-x:scroll;
+}
+
+#deer-head {
+    position:absolute;
+    left: 0;
+    height: 25vh;
+    width: 10vh;
+    bottom: 0;
+}
+
+
+.deer-horn {
+    white-space: nowrap;
+    position:absolute;
+    left: 10vh;
+    bottom: 15.1vh;
+    padding: 0;
+    line-height: 0;
+    font-size: 0;
+}
+
+
+.deer-horn .yoko{
+    margin: 0;
+    padding: 0;
+    height: 1.21vh;
+    vertical-align: bottom;
+    display: inline-block;
+
+}
+
+.deer-horn .tuno {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.deer-horn .tuno img{
+    margin: 0;
+    padding: 0;
+    height: 9.92vh;
+    vertical-align: bottom;
+}
+
+.deer-card {
+    cursor: pointer;
+    line-height: normal;
+    position: absolute;
+    top:-6rem;
+    left: -3rem;
+    background-color: #3A745F;
+    padding: 1rem;
+    height: 5rem;
+    width: 14.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.5s;
+}
+
+.deer-card h4{
+    font-size: 2.5rem;
+    color: #F2CB6C;
+    text-align: center;
+}
+
+.deer-card p{
+    font-family: "youyuan";
+    font-size: 1rem;
+    color: #fff;
+    /* display: none; */
+    /* margin-top: 1rem; */
+    opacity: 0;
+    transition: all 0.8s;
+}
+
+.deer-card:hover {
+    top:-10.5rem;
+    height: 9.5rem;
+}
+
+.deer-card:hover p{
+    /* display: block; */
+    opacity: 100;
+}
+
+/* 其他 */
+.fixed{
+    transition: all 0.03s;
+}
+
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-fluid {
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.footer {
+    background-color: #3A745F;
+}
+
+.copyright {
+  text-align: center;
+  color: #ffc107;
+  font-size: 15px;
+}
+
+.credits {
+  text-align: center;
+  font-size: 14px;
+  padding-top: 4px;
+  color: #FFE5B4;
+}
+
+ .credits a {
+  color: #FFF8DC;
+}
+
+.credits a:hover {
+  color: #b4aa99;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus {
+    color: initial;
+}
+
+a:hover {
+    color: inherit;
+}
+
+/* 随屏幕大小变化 */
+
+@media screen and (max-width:992px) {
+    html {
+        font-size: 13px;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    html {
+        font-size: 11px;
+    }
+    .container-fluid {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+    .card-job ul{
+    list-style-type: none;
+    }
+    .deer-horn .yoko{
+        width: 10vw;
+    }
+}
+
+@media screen and (max-width:576px) {
+    html {
+        font-size: 9px;
+    }
+    .container-fluid {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    .deer-horn .yoko{
+        width: 8vw;
+    }
+}

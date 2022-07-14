@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <!-- 国内 Staticfile CDN 上的 Bootstrap5 核心 CSS 文件 -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css"
+  >
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css"
+    rel="stylesheet"
+    type="text/css"
+  >
+  <script src="bootstrap/js/jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="./css/youlu.css"
+  >
+
+  <title>职业详情</title>
+
+  <script
+    src="https://kit.fontawesome.com/9276d37eba.js"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"
+  ></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css"
+    rel="stylesheet"
+    type="text/css"
+  >
+
+  <style>
+    .btn1 {
+      padding-bottom: 15px;
+    }
+
+    .lee6 {
+      font-size: 50px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .carousel-inner {
+      margin: 10px;
+      padding: 25px;
+      border: solid 1px #C0C0C0;
+      background-color: #E5E4E2;
+    }
+
+    .lee7 {
+      padding-left: 40px;
+      padding-right: 50px;
+    }
+
+    .lee8 {
+      margin-top: 10px;
+    }
+
+    .lee9 {
+      margin-top: 5px;
+      margin-bottom: 10px;
+      margin-left: 3px;
+      margin-right: 3px;
+      border: solid 1px #C0C0C0;
+    }
+
+    .lee10 {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 12px;
+    }
+
+    .container-fluid {
+      padding-left: 4%;
+      padding-right: 4%;
+    }
+
+    @media screen and (max-width:992px) {
+      .container-fluid {
+        padding-left: 1%;
+        padding-right: 1%;
+      }
+    }
+  </style>
+
+  <link rel="icon" href="favicon.ico">
+  </head>
+
+  <body class="body-bg">
+
+  <!---这是导航栏--->
+  <nav class="navbar navbar-expand-md nav mb-5">
+    <div class="container-fluid">
+      <a
+        class="navbar-brand"
+        href="index.html"
+        target="_blank"
+      >
+        有 鹿 🦌
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="careerPlanning.html"
+              target="_blank"
+            >&nbsp;探索鹿径&nbsp;</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="jobCollection.html"
+              target="_blank"
+            >&nbsp;职业总览&nbsp;</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="lu2.html"
+              target="_blank"
+            >&nbsp;我的鹿径</a>
+          </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!---页面内容--->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- 左侧页面内容：人力资源管理工作者适配度 -->
+      <div class="col-3 col-md-2 d-none d-sm-block">
+        <div class=" border-main fixed cm p-2">
+          <h5 class="text-center"><strong>人力资源管理工作者</strong></h5>
+          <hr>
+          <div class="text-center">
+            <p>兴趣匹配度</p>
+
+            <div class="progress">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                style="width: 85%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >沟通 85%</div>
+            </div>
+
+            <div class="progress">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                style="width: 70%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >管理 70%</div>
+            </div>
+          </div>
+          <hr>
+          <div class="text-center">
+            <p>条件适配度</p>
+
+            <div class="progress">
+              <div
+                class="progress-bar bg-warning text-dark"
+                role="progressbar"
+                style="width: 79%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >第一学历 79%</div>
+            </div>
+
+            <div class="progress">
+              <div
+                class="progress-bar bg-warning text-dark"
+                role="progressbar"
+                style="width: 67%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >专业 67%</div>
+            </div>
+          </div>
+          <hr>
+          <div class="text-center my-2">
+            <a href = "lu.html"  target="_blank">
+            <button
+              class="btn btn-vice text-nowrap"
+              type="button"
+            >生成鹿径</button></a>
+          </div>
+        </div>
+      </div>
+
+      <!--中间页面内容：成为力资源管理工作者是怎样的一条路 -->
+      <div class="col-12 col-md-8 col-sm-9">
+        <div class="row border-main bg-light details py2 px-5">
+          <!-- 成为人力资源管理工作者是一条怎样的路？ -->
+          <div class="py-2">
+            <h1 style="color:#3A745F;">成为<span style="color:#F2CB6C">人力资源管理工作者</span>是一条怎样的路？
+            </h1>
+          </div>
+          <!-- 人力资源管理工作者的一天 -->
+          <div>
+            <h4>人力资源管理工作者的一天</h4>
+            <div class="row middle">
+              <div class="col-12 col-lg-6">
+                <video
+                  class="w-100"
+                  src="https://upos-sz-mirrorhw.bilivideo.com/upgcxcode/66/07/465630766/465630766-1-208.mp4?e=ig8euxZM2rNcNbhM7WdVhwdlhzKBhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1657620010&gen=playurlv2&os=hwbv&oi=17808763&trid=704da56972304f608924930782685cadT&mid=0&platform=html5&upsig=fc340c688d8c853821e90e8b2943f69d&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&bvc=vod&nettype=0&bw=345375&orderid=0,1&logo=80000000"
+                  controls
+                >
+              </div>
+              <div class="col-12 col-lg-6">
+                <p>
+                  Emily是一位外企HR高管。早上九点半来到公司，她被通知十点有一个会议。九点钟，与老板开会后，她明确了公司空缺的职位和需要的人才方向。回到办公室，她浏览了在公司邮件，各大招聘网站的投递来的简历，并根据简历进行了初筛。随后，她通知了通过初筛的候选人来面试。下午，她开始面试上一次通知的候选人。经过一下午的高强度工作，她在晚饭前整理出来3位比较具有竞争力的候选人，并通知他们进行第二次面试。在安排好了明天要面试的候选人顺序后，Emily正式完成了今天的工作，回家准备好好放松一下。
+                </p>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- 需要哪些资质 -->
+          <div>
+            <h4>需要哪些资质？</h4>
+            <div class="col-12">
+              <ul>
+                <li>善于与人沟通</li>
+                <li>较强的协调能力</li>
+                <li>有较高的情绪函容能力</li>
+              </ul>
+            </div>
+            <div class="col-12 mt-5">
+              <p align="center">从业者学历</p>
+              <div id="chart3"></div>
+            </div>
+          </div>
+          <hr>
+          <!-- 市场情况 -->
+          <h4>市场情况</h4>
+          <div class="row">
+            <div class="col-12 mt-5">
+              <p align="center">薪资涨幅</p>
+              <div id="chart4"></div>
+            </div>
+            <div class="col-12 mt-5">
+              <p align="center">岗位数量</p>
+              <div id="chart5"></div>
+            </div>
+          </div>
+          <hr>
+          <!-- 来自资深从业者的建议 -->
+          <div>
+            <h4>来自资深从业者的建议</h4>
+            <div>
+              <div
+                id="carouselExampleIndicators"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <ol class="carousel-indicators">
+                  <li
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0"
+                    class="active"
+                  ></li>
+                  <li
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="1"
+                  ></li>
+                  <li
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="2"
+                  ></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="row">
+                      <div class="col-2">
+                        <i class="lee6 fa-solid fa-circle-user"></i>
+                      </div>
+                      <div class="col-7">
+                        <h6><strong>王君</strong></h6>
+                        <p
+                          class="fw-light"
+                          style="font-size:5px"
+                        >某4A公司资深HR。从业二十余年，深谙人力资源市场运作规律。</p>
+                      </div>
+                      <div class="col-3">
+                        <!-- Button trigger modal -->
+                          <button class="btn btn-primary btn-vice text-nowrap" data-bs-toggle="modal" data-bs-target="#staticBackdrop">一对一咨询</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">失败</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                对不起，您还没有购买一对一咨询服务，请付费后重试。
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <p class="lee7">
+
+                        做人事，要本着服务的心态，以利他之心为公司和求职者考虑。要选公司适合的人，也要对每一位求职者负责，更要关心爱护公司里的每一位员工。做协调是很难的，这是一条长久、曲折的路，如果你有志于此，应当从现在开始就培养自己与人沟通的能力，培养自己的阅历与见识。加油，你一定可以找到适合自己的岗位，实现自己的梦想！
+                      </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row">
+                      <div class="col-2">
+                        <i class="lee6 fa-solid fa-circle-user"></i>
+                      </div>
+                      <div class="col-7">
+                        <h6><strong>李莉
+                          </strong></h6>
+                        <p
+                          class="fw-light"
+                          style="font-size:5px"
+                        >某国内互联网大厂HR部门主管，从业经验达十余年。</p>
+                      </div>
+                      <div class="col-3">
+                        <!-- Button trigger modal -->
+                          <button class="btn btn-primary btn-vice text-nowrap" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">一对一咨询</button>
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">失败</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                对不起，您还没有购买一对一咨询服务，请付费后重试。
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <p class="lee7">
+                        同学你好，很高兴你对HR工作感兴趣，这份工作对于每一个组织来说都是必不可少的，HR部门相当于公司的大管家，要负责整个公司人力的规章及管理，远不止面试和招聘这么简单。如果你未来有志于成为一名职业的人力资源管理工作人员，那么你现在应该着重培养自己与人沟通、协商的能力，并挖掘自己的规划与管理能力。期待在未来可以与你相见。
+                      </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row">
+                      <div class="col-2">
+                        <i class="lee6 fa-solid fa-circle-user"></i>
+                      </div>
+                      <div class="col-7">
+                        <h6><strong>刘河
+
+                          </strong></h6>
+                        <p
+                          class="fw-light"
+                          style="font-size:5px"
+                        >某中国银行分行HR部门主管，从业十余年。</p>
+                      </div>
+                      <div class="col-3">
+                        <!-- Button trigger modal -->
+                          <button class="btn btn-primary btn-vice text-nowrap" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">一对一咨询</button>
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">失败</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                对不起，您还没有购买一对一咨询服务，请付费后重试。
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <p class="lee7">
+                        HR是一份需要智慧、责任、同理心的工作。你会遇到许多突发事件，如何处理这些计划之外的插曲、如何同时满足老板和求职者的需求，这些都要智慧；如何保证单位与求职者的未来取决于你的责任心，能不能恪守本心做适合单位的选择亦然；在工作过程中会有许多特殊情况需要你的人文关怀，如何在保证效率的情况下最大程度争取员工福利，这些都是你要关注的。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  class="carousel-control-prev"
+                  href="#carouselExampleIndicators"
+                  role="button"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </a>
+                <a
+                  class="carousel-control-next"
+                  href="#carouselExampleIndicators"
+                  role="button"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- 在有鹿，找到属于你的路 -->
+          <div>
+            <h4>在有鹿，找到属于你的路</h4>
+            <div class="row lee8 middle">
+              <div class="col-9">
+                <p>
+                  有了对于职业的初步了解，你是否想了解自己的现实状况与工作是否匹配呢？
+                  有鹿平台结合大数据与专业人士的海量数据，为你量身打造了属于你的成长路径，点击右侧按钮，开启你的有鹿之旅。
+                </p>
+              </div>
+              <div class="col-3 text-center text-nowrap">
+                 <a href="lu2.html"   target="_blank">
+                <button class="btn btn-vice">探索成长鹿径</button>
+                </a>
+              </div>
+            </div>
+            <hr>
+          </div>
+        </div>
+
+      <!-- 评论区 -->
+      <div class="row border-main bg-light details py-2 px-5 my-5">
+        <h4 style="padding-top:13px;">评论区</h4>
+        <textarea
+          style="width:100%;"
+          placeholder="请输入评论"
+        ></textarea><br>
+        <button
+          class="btn btn-vice"
+          style="margin-top:13px;width:100%;height:100%"
+        >提交评论</button>
+
+        <div class="d-flex py-4">
+          <div class="flex-shrink-0">
+            <i class="lee6 fa-solid fa-circle-user"></i>
+          </div>
+          <div class="flex-grow-1 ms-3">
+            <h5>小刘</h5>
+          哇，HR的工作跟我想象中不太一样诶，看完这页之后对HR这行更感兴趣了！
+          </div>
+        </div>
+      </div>
+
+      </div>
+
+
+
+    <!-- 右侧页面内容：关联职业 -->
+    <div class="col-2 d-none d-md-block cm">
+      <h1>关联职业</h1>
+      <hr>
+      <!-- card1 -->
+      <a
+          href="jobDetails2.html"
+          target="_blank"
+      >
+      <div class="cm-card text-center my-2">
+        <h4><strong>心理咨询师</strong></h4>
+        <hr class="m-1">
+
+        <div class="progress">
+          <div
+            class="progress-bar bg-success"
+            role="progressbar"
+            style="width: 75%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >兴趣匹配 75%</div>
+        </div>
+
+
+        <div class="progress">
+          <div
+            class="progress-bar bg-warning text-dark"
+            role="progressbar"
+            style="width: 72%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >条件适配 72%</div>
+        </div>
+      </div>
+    </a>
+      <!-- card2 -->
+      <a
+          href="jobDetails2.html"
+          target="_blank"
+      >
+      <div class="cm-card text-center my-2">
+        <h4><strong>培训专员</strong></h4>
+        <hr class="m-1">
+
+        <div class="progress">
+          <div
+            class="progress-bar bg-success"
+            role="progressbar"
+            style="width: 71%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >兴趣匹配 71%</div>
+        </div>
+
+
+        <div class="progress">
+          <div
+            class="progress-bar bg-warning text-dark"
+            role="progressbar"
+            style="width: 68%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >条件适配 68%</div>
+        </div>
+      </div>
+      </a>
+      <!-- card3 -->
+      <a
+          href="jobDetails2.html"
+          target="_blank"
+      >
+      <div class="cm-card text-center my-2">
+        <h4><strong>薪酬专员</strong></h4>
+        <hr class="m-1">
+
+        <div class="progress">
+          <div
+            class="progress-bar bg-success"
+            role="progressbar"
+            style="width: 65%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >兴趣匹配 65%</div>
+        </div>
+
+
+        <div class="progress">
+          <div
+            class="progress-bar bg-warning text-dark"
+            role="progressbar"
+            style="width: 71%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >条件适配 71%</div>
+        </div>
+      </div>
+    </a>
+      <!-- card4 -->
+      <a
+          href="jobDetails2.html"
+          target="_blank"
+      >
+      <div class="cm-card text-center my-2">
+        <h4><strong>猎头</strong></h4>
+        <hr class="m-1">
+
+        <div class="progress">
+          <div
+            class="progress-bar bg-success"
+            role="progressbar"
+            style="width: 62%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >兴趣匹配 62%</div>
+        </div>
+
+
+        <div class="progress">
+          <div
+            class="progress-bar bg-warning text-dark"
+            role="progressbar"
+            style="width: 65%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >条件适配 65%</div>
+        </div>
+      </div>
+    </a>
+      <!-- card-5 -->
+      <a
+          href="jobDetails2.html"
+          target="_blank"
+      >
+      <div class="cm-card text-center my-2">
+        <h4><strong>行政管理</strong></h4>
+        <hr class="m-1">
+
+        <div class="progress">
+          <div
+            class="progress-bar bg-success"
+            role="progressbar"
+            style="width: 75%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >兴趣匹配 73%</div>
+        </div>
+
+
+        <div class="progress">
+          <div
+            class="progress-bar bg-warning text-dark"
+            role="progressbar"
+            style="width: 51%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >条件适配 51%</div>
+        </div>
+      </div>
+    </a>
+    </div>
+
+  </div>
+  </div>
+
+  <br>
+
+
+  <!---这是footer--->
+  <div class="container-fluid footer mt-5">
+    <footer>
+      <br>
+      <div class="copyright">
+        &copy; Copyright <strong>YOULU</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="index.html" target="_blank">youlu</a>
+      </div>
+      <br>
+    </footer>
+  </div>
+
+  <!-- 国内 Staticfile CDN 上的 Bootstrap5 核心 JavaScript 文件 -->
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+
+
+</body>
+
+<script>
+  // 背景移动
+  $('.body-bg').mousemove(function (e) {
+    var motion_rate = 0.07;
+    var x = (e.screenX / $(window).width() - 0.5) * motion_rate;
+    var y = (e.screenY / $(window).height() - 0.5) * motion_rate;
+    $(this).css('background-position', (-x + 0.5) * 100 + '%' + (-y + 0.5) * 100 + "%");
+  });
+  // 固定（fixed类）
+  var fix_height = $(".fixed").offset().top;
+  $(window).scroll(function () {
+    if ($(document).scrollTop() >= fix_height) {
+      $(".fixed").css("transform", "translateY(" + ($(document).scrollTop() - fix_height + 20) + "px)");
+    } else {
+      $(".fixed").css("transform", "none");
+    }
+  });
+
+
+
+  // <!-- chart3 -->
+
+  var chart = c3.generate({
+    bindto: '#chart3',
+    data: {
+        x: 'x',
+        columns: [
+            ['x', '2017-01-01', '2018-01-02', '2019-01-03', '2020-01-04', '2021-01-05', '2022-01-06'],
+            ['高中及以下', 13, 12, 18, 12, 12, 15],
+            ['本科', 47, 50, 53, 43, 52, 55],
+            ['硕士', 28, 25, 19, 27, 22, 19],
+            ['博士', 12, 13, 17, 12, 14, 11]
+        ],
+        type: 'bar',
+        labels: true
+    },
+    axis: {
+      y: {
+        label: '%'
+      },
+        x: {
+            type: 'timeseries',
+            tick: {
+                format: '%Y'
+            }
+        }
+    }
+});
+
+
+  // <!-- chart4 -->
+
+  var chart4 = c3.generate({
+    bindto: '#chart4',
+    data: {
+      x:'x', 
+      columns: [
+        ['x','2020-01-04', '2021-01-05', '2022-01-06'],
+        ['头部薪资', 18000, 21000, 24000],
+        ['平均薪资', 8000, 7900, 9000],
+        ['入行薪资', 5500, 5700, 6000]
+      ],
+      labels: true
+    },
+    axis: {
+      y: {
+        label: '元'
+      },
+      x: {
+            type: 'timeseries',
+            tick: {
+                format: '%Y'
+            }
+        }
+    }
+  });
+
+
+  // <!-- chart5 -->
+
+  var chart5 = c3.generate({
+    bindto: '#chart5',
+    data: {
+      x:"x",
+      columns: [
+        ['x', '2017-01-01', '2018-01-02', '2019-01-03', '2020-01-04', '2021-01-05', '2022-01-06'],
+        ['应届岗位数量', 3700, 4600, 4200, 4000, 4500]
+      ],
+      labels: true
+    },
+    axis: {
+      x: {
+        type: 'timeseries',
+            tick: {
+                format: '%Y'
+            }
+      }
+    }
+  })
+
+
+</script>
+
+</body>
+
+</html>
