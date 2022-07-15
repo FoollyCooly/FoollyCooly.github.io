@@ -35,8 +35,8 @@
     color: #b4aa99;
 }
 
-.nav .nav-link:focus{
-    color:#F2CB6C;
+.nav .nav-link:focus {
+    color: #F2CB6C;
 }
 
 .nav .navbar-toggler {
@@ -47,6 +47,31 @@
     background-image: url(https://www.svgrepo.com/show/417897/menu-1.svg);
 }
 
+/* 回顶按钮 */
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #3A745F;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
+}
+
+.back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+}
+
+.back-to-top:hover {
+    background: #374B43;
+    color: #fff;
+}
 
 /* 步骤条 */
 .steps {
@@ -165,7 +190,7 @@
 
 /* 按钮 */
 .btn-main {
-    white-space:nowrap;
+    white-space: nowrap;
     font-size: 2rem;
     background-color: #3A745F;
     color: #fff;
@@ -180,7 +205,8 @@
     transition: all 0.5s;
 }
 
-.btn-main:hover,.btn-vice:hover {
+.btn-main:hover,
+.btn-vice:hover {
     color: #fff;
     background-color: #374B43;
 }
@@ -198,7 +224,7 @@
     --color-green: #E9E9E9;
 }
 
-.switch{
+.switch {
     cursor: pointer;
 }
 
@@ -220,16 +246,16 @@
     background-color: #fff;
     border-radius: calc(var(--toggle-diameter) / 2);
     position: absolute;
-    left:0%;
+    left: 0%;
     top: var(--button-toggle-offset);
     transform: translateX(var(--button-toggle-offset));
     box-shadow: var(--toggle-shadow-offset) 0 calc(var(--toggle-shadow-offset) * 4) rgba(0, 0, 0, .10);
     transition: .3s all ease-in-out;
 }
 
-.switch input[type="checkbox"]:checked+span {
+/* .switch input[type="checkbox"]:checked+span {
     background-color: var(--color-green);
-}
+} */
 
 .switch input[type="checkbox"]:checked+span::after {
     transform: translateX(calc(var(--button-width) - var(--toggle-diameter) - var(--button-toggle-offset)));
@@ -250,26 +276,27 @@
 
 /* 卡片 */
 
-.card-switch{
+.card-switch {
     font-family: "yuehei";
     margin-top: 3%;
     margin-bottom: 3%;
     transition: all 0.8s;
     cursor: pointer;
 }
-.card-switch .card-title{
+
+.card-switch .card-title {
     font-size: 1.2vw;
-    font-weight:500;
+    font-weight: 500;
     border-radius: 0.25rem;
     box-shadow: 0px 0px 0.25rem rgba(15, 15, 15, 0.3) inset;
     color: black;
-    background-color:rgba(255, 255, 255, .40);
+    background-color: rgba(255, 255, 255, .40);
 }
 
-.card-switch .card-choice{
-    display:flex;
+.card-switch .card-choice {
+    display: flex;
     position: relative;
-    height:5rem;
+    height: 5rem;
     max-height: 5rem;
     background-position: center;
     /* background-repeat: no-repeat;
@@ -277,23 +304,24 @@
     background-image: url(../image/deer/deer-2.svg); */
 }
 
-.card-switch .card-choice span{
+.card-switch .card-choice span {
     position: absolute;
     font-size: 2vw;
     opacity: 0.7;
-    align-self:center;
+    align-self: center;
     transition: all 0.5s;
 }
 
-.card-switch .card-choice .choice_1{
+.card-switch .card-choice .choice_1 {
     left: 15%;
 }
 
-.card-switch .card-choice .choice_2{
+.card-switch .card-choice .choice_2 {
     right: 15%;
 }
+
 /* 信息卡片 */
-.info{
+.info {
     display: none;
 }
 
@@ -310,16 +338,16 @@
     cursor: pointer;
 }
 
-.card-info h4{
+.card-info h4 {
     font-family: "yuehei";
     font-size: 3rem;
     font-weight: 500;
     margin-top: 1rem;
     transition: all 0.8s;
-    white-space:nowrap;
+    white-space: nowrap;
 }
 
-.card-info input{
+.card-info input {
     font-family: "yuehei";
     text-align: center;
     margin-top: 1.5rem;
@@ -334,7 +362,7 @@
 
 }
 
-.card-info input::-webkit-input-placeholder{
+.card-info input::-webkit-input-placeholder {
     color: #e7e7e7;
     /* font-size: 2rem; */
     /* text-decoration:dotted; */
@@ -344,12 +372,12 @@
     background-color: #3A745F;
 }
 
-.card-info:hover h4{
+.card-info:hover h4 {
     color: #F2CB6C;
     font-size: 3.25rem;
 }
 
-.card-info:hover input{
+.card-info:hover input {
     color: #7d7d7d;
     margin-top: 1rem;
     font-size: 2.5rem;
@@ -357,10 +385,11 @@
 
 
 /* 职业卡片 */
-.job{
+.job {
     display: none;
 }
-.card-job{
+
+.card-job {
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.12);
     border-radius: 0.25rem;
     text-align: center;
@@ -383,10 +412,10 @@
     font-size: 3rem;
     margin-top: 1rem;
     transition: all 0.8s;
-    white-space:nowrap;
+    white-space: nowrap;
 }
 
-.card-job ul{
+.card-job ul {
     /* display:none; */
     opacity: 0;
     white-space: nowrap;
@@ -400,18 +429,18 @@
     transition: all 0.8s;
 }
 
-.card-job:hover{
+.card-job:hover {
     background-color: #3A745F;
     box-shadow: 0px 0px 30px rgba(57, 57, 57, 0.12);
 }
 
-.card-job:hover img{
+.card-job:hover img {
     transform: scale(1.1) translateY(1rem);
     opacity: 0;
 
 }
 
-.card-job:hover h4{
+.card-job:hover h4 {
     color: #F2CB6C;
     font-size: 3.2rem;
     transform: translateY(-7rem);
@@ -419,18 +448,19 @@
     margin-bottom: 0.5rem;
 }
 
-.card-job:hover ul{
+.card-job:hover ul {
     /* display: block; */
     opacity: 100%;
 }
 
 /* 详情页 */
-.details p{
+.details p {
     font-family: YouYuan;
-    font-size:1.2rem;
+    font-size: 1.2rem;
     margin: 0;
 }
-.details h1{
+
+.details h1 {
     color: #F2CB6C;
     text-align: center;
     font-family: "yuehei";
@@ -440,7 +470,7 @@
     margin-top: 1rem;
 }
 
-.details h4{
+.details h4 {
     color: #3A745F;
     text-align: start;
     font-family: "yuehei";
@@ -448,17 +478,17 @@
     margin-bottom: 1.5rem;
 }
 
-.details ul{
+.details ul {
     font-family: youyuan;
     font-size: 1.5rem;
     margin: 0;
     padding: 0;
     list-style-position: inside;
-    color:lightslategrey;
+    color: lightslategrey;
 }
 
 
-.details hr{
+.details hr {
     margin-top: 4vh;
     margin-bottom: 4vh;
 }
@@ -468,7 +498,7 @@
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-.cm h1{
+.cm h1 {
     text-align: center;
     font-family: "yuehei";
     font-size: 2rem;
@@ -477,27 +507,27 @@
     margin-top: 0.6rem;
 }
 
-.cm .cm-card{
+.cm .cm-card {
     background-color: #fff;
     padding: 0.5rem;
     border-radius: 0.25rem;
-    border-style:solid;
+    border-style: solid;
     border-color: #7d7d7d;
     border-width: 0.05rem;
     cursor: pointer;
     transition: all 0.5s;
 }
 
-.cm .cm-card:hover{
+.cm .cm-card:hover {
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.12);
     transform: scale(1.02);
 }
 
-.cm .cm-card img{
+.cm .cm-card img {
     width: 5vw;
 }
 
-.cm .cm-card h4{
+.cm .cm-card h4 {
     color: #3A745F;
     font-weight: 700;
     font-size: 1.25vw;
@@ -506,19 +536,19 @@
     margin: 0;
 }
 
-.cm .cm-card p{
+.cm .cm-card p {
     white-space: nowrap;
     font-size: 1vw;
     margin: 0;
 }
 
-.progress{
+.progress {
     margin-left: 0.3rem;
     margin-right: 0.3rem;
     margin-top: 1rem;
 }
 
-.progress-bar{
+.progress-bar {
     font-size: 0.5rem;
 }
 
@@ -528,7 +558,7 @@
     padding: 1rem;
 }
 
-.jobCollection h1{
+.jobCollection h1 {
     text-align: center;
     font-family: "yuehei";
     color: #3A745F;
@@ -546,18 +576,18 @@
 
 /* 路径图 */
 
-#road-title{
+#road-title {
     margin-bottom: 1rem;
     font-family: "yuehei";
 
 }
 
-#road-title a{
-    color:#3A745F;
+#road-title a {
+    color: #3A745F;
     transition: all 0.5s;
 }
 
-#road-title a:hover{
+#road-title a:hover {
     color: #60a78d;
 }
 
@@ -567,11 +597,11 @@
     height: 60vh;
     background-color: rgba(58, 116, 95, .60);
     margin: 0;
-    overflow-x:scroll;
+    overflow-x: scroll;
 }
 
 #deer-head {
-    position:absolute;
+    position: absolute;
     left: 0;
     height: 25vh;
     width: 10vh;
@@ -581,7 +611,7 @@
 
 .deer-horn {
     white-space: nowrap;
-    position:absolute;
+    position: absolute;
     left: 10vh;
     bottom: 15.1vh;
     padding: 0;
@@ -590,7 +620,7 @@
 }
 
 
-.deer-horn .yoko{
+.deer-horn .yoko {
     margin: 0;
     padding: 0;
     height: 1.21vh;
@@ -606,7 +636,7 @@
     padding: 0;
 }
 
-.deer-horn .tuno img{
+.deer-horn .tuno img {
     margin: 0;
     padding: 0;
     height: 9.92vh;
@@ -617,7 +647,7 @@
     cursor: pointer;
     line-height: normal;
     position: absolute;
-    top:-6rem;
+    top: -6rem;
     left: -3rem;
     background-color: #3A745F;
     padding: 1rem;
@@ -627,13 +657,13 @@
     transition: all 0.5s;
 }
 
-.deer-card h4{
+.deer-card h4 {
     font-size: 2.5rem;
     color: #F2CB6C;
     text-align: center;
 }
 
-.deer-card p{
+.deer-card p {
     font-family: "youyuan";
     font-size: 1rem;
     color: #fff;
@@ -644,17 +674,17 @@
 }
 
 .deer-card:hover {
-    top:-10.5rem;
+    top: -10.5rem;
     height: 9.5rem;
 }
 
-.deer-card:hover p{
+.deer-card:hover p {
     /* display: block; */
     opacity: 100;
 }
 
 /* 其他 */
-.fixed{
+.fixed {
     transition: all 0.03s;
 }
 
@@ -674,24 +704,24 @@
 }
 
 .copyright {
-  text-align: center;
-  color: #ffc107;
-  font-size: 15px;
+    text-align: center;
+    color: #ffc107;
+    font-size: 15px;
 }
 
 .credits {
-  text-align: center;
-  font-size: 14px;
-  padding-top: 4px;
-  color: #FFE5B4;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 4px;
+    color: #FFE5B4;
 }
 
- .credits a {
-  color: #FFF8DC;
+.credits a {
+    color: #FFF8DC;
 }
 
 .credits a:hover {
-  color: #b4aa99;
+    color: #b4aa99;
 }
 
 a {
@@ -720,14 +750,17 @@ a:hover {
     html {
         font-size: 11px;
     }
+
     .container-fluid {
         padding-left: 6%;
         padding-right: 6%;
     }
-    .card-job ul{
-    list-style-type: none;
+
+    .card-job ul {
+        list-style-type: none;
     }
-    .deer-horn .yoko{
+
+    .deer-horn .yoko {
         width: 10vw;
     }
 }
@@ -736,11 +769,13 @@ a:hover {
     html {
         font-size: 9px;
     }
+
     .container-fluid {
         padding-left: 4%;
         padding-right: 4%;
     }
-    .deer-horn .yoko{
+
+    .deer-horn .yoko {
         width: 8vw;
     }
 }

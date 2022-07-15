@@ -19,6 +19,10 @@
     rel="stylesheet"
     type="text/css"
   >
+  <link
+    href="./index/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+    rel="stylesheet"
+  >
   <script src="bootstrap/js/jquery.min.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <link
@@ -104,10 +108,13 @@
     }
   </style>
 
-  <link rel="icon" href="favicon.ico">
-  </head>
+  <link
+    rel="icon"
+    href="favicon.ico"
+  >
+</head>
 
-  <body class="body-bg">
+<body class="body-bg">
 
   <!---这是导航栏--->
   <nav class="navbar navbar-expand-md nav mb-5">
@@ -169,7 +176,7 @@
       <!-- 左侧页面内容：猎头适配度 -->
       <div class="col-3 col-md-2 d-none d-sm-block">
         <div class=" border-main fixed cm p-2">
-          <h5 class="text-center"><strong>猎头</strong></h5>
+          <h5 class="text-center"><strong>行政管理</strong></h5>
           <hr>
           <div class="text-center">
             <p>兴趣匹配度</p>
@@ -224,11 +231,14 @@
           </div>
           <hr>
           <div class="text-center my-2">
-            <a href = "lu2.html"  target="_blank">
-            <button
-              class="btn btn-vice text-nowrap"
-              type="button"
-            >生成鹿径</button></a>
+            <a
+              href="lu2.html"
+              target="_self"
+            >
+              <button
+                class="btn btn-vice text-nowrap"
+                type="button"
+              >生成鹿径</button></a>
           </div>
         </div>
       </div>
@@ -246,11 +256,7 @@
             <h4>行政管理者的一天</h4>
             <div class="row middle">
               <div class="col-12 col-lg-6">
-                <video
-                  class="w-100"
-                  src="https://upos-sz-mirrorhw.bilivideo.com/upgcxcode/66/07/465630766/465630766-1-208.mp4?e=ig8euxZM2rNcNbhM7WdVhwdlhzKBhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1657620010&gen=playurlv2&os=hwbv&oi=17808763&trid=704da56972304f608924930782685cadT&mid=0&platform=html5&upsig=fc340c688d8c853821e90e8b2943f69d&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&bvc=vod&nettype=0&bw=345375&orderid=0,1&logo=80000000"
-                  controls
-                >
+                <iframe class="w-100" src="//player.bilibili.com/player.html?aid=54539426&bvid=BV1f4411T7vu&cid=95400619&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" height="240"> </iframe>
               </div>
               <div class="col-12 col-lg-6">
                 <p>
@@ -271,6 +277,10 @@
               </ul>
             </div>
             <div class="col-12 mt-5">
+              <p align="center">从业者学历</p>
+              <div id="chart3"></div>
+            </div>
+            <div class="col-12 mt-5">
               <div id="chart3"></div>
             </div>
           </div>
@@ -279,7 +289,7 @@
           <h4>市场情况</h4>
           <div class="row">
             <div class="col-12 mt-5">
-              <p align="center">薪资涨幅</p>
+              <p align="center">薪资涨落</p>
               <div id="chart4"></div>
             </div>
             <div class="col-12 mt-5">
@@ -327,20 +337,44 @@
                       </div>
                       <div class="col-3">
                         <!-- Button trigger modal -->
-                          <button class="btn btn-primary btn-vice text-nowrap" data-bs-toggle="modal" data-bs-target="#staticBackdrop">一对一咨询</button>
+                        <button
+                          class="btn btn-primary btn-vice text-nowrap"
+                          data-bs-toggle="modal"
+                          data-bs-target="#staticBackdrop"
+                        >一对一咨询</button>
                         <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div
+                          class="modal fade"
+                          id="staticBackdrop"
+                          data-bs-backdrop="static"
+                          data-bs-keyboard="false"
+                          tabindex="-1"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                        >
                           <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">失败</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <h5
+                                  class="modal-title"
+                                  id="staticBackdropLabel"
+                                >失败</h5>
+                                <button
+                                  type="button"
+                                  class="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
                               </div>
                               <div class="modal-body">
                                 对不起，您还没有购买一对一咨询服务，请付费后重试。
                               </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button
+                                  type="button"
+                                  class="btn btn-secondary"
+                                  data-bs-dismiss="modal"
+                                >Close</button>
                               </div>
                             </div>
                           </div>
@@ -368,21 +402,45 @@
                       </div>
                       <div class="col-3">
                         <!-- Button trigger modal -->
-                          <button class="btn btn-primary btn-vice text-nowrap" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">一对一咨询</button>
+                        <button
+                          class="btn btn-primary btn-vice text-nowrap"
+                          data-bs-toggle="modal"
+                          data-bs-target="#staticBackdrop2"
+                        >一对一咨询</button>
                         </button>
                         <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div
+                          class="modal fade"
+                          id="staticBackdrop2"
+                          data-bs-backdrop="static"
+                          data-bs-keyboard="false"
+                          tabindex="-1"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                        >
                           <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">失败</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <h5
+                                  class="modal-title"
+                                  id="staticBackdropLabel"
+                                >失败</h5>
+                                <button
+                                  type="button"
+                                  class="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
                               </div>
                               <div class="modal-body">
                                 对不起，您还没有购买一对一咨询服务，请付费后重试。
                               </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button
+                                  type="button"
+                                  class="btn btn-secondary"
+                                  data-bs-dismiss="modal"
+                                >Close</button>
                               </div>
                             </div>
                           </div>
@@ -411,21 +469,45 @@
                       </div>
                       <div class="col-3">
                         <!-- Button trigger modal -->
-                          <button class="btn btn-primary btn-vice text-nowrap" data-bs-toggle="modal" data-bs-target="#staticBackdrop3">一对一咨询</button>
+                        <button
+                          class="btn btn-primary btn-vice text-nowrap"
+                          data-bs-toggle="modal"
+                          data-bs-target="#staticBackdrop3"
+                        >一对一咨询</button>
                         </button>
                         <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div
+                          class="modal fade"
+                          id="staticBackdrop3"
+                          data-bs-backdrop="static"
+                          data-bs-keyboard="false"
+                          tabindex="-1"
+                          aria-labelledby="staticBackdropLabel"
+                          aria-hidden="true"
+                        >
                           <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">失败</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <h5
+                                  class="modal-title"
+                                  id="staticBackdropLabel"
+                                >失败</h5>
+                                <button
+                                  type="button"
+                                  class="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
                               </div>
                               <div class="modal-body">
                                 对不起，您还没有购买一对一咨询服务，请付费后重试。
                               </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button
+                                  type="button"
+                                  class="btn btn-secondary"
+                                  data-bs-dismiss="modal"
+                                >Close</button>
                               </div>
                             </div>
                           </div>
@@ -478,8 +560,11 @@
                 </p>
               </div>
               <div class="col-3 text-center text-nowrap">
-                 <a href="lu2.html"   target="_blank">
-                <button class="btn btn-vice">探索成长鹿径</button>
+                <a
+                  href="lu2.html"
+                  target="_self"
+                >
+                  <button class="btn btn-vice">探索成长鹿径</button>
                 </a>
               </div>
             </div>
@@ -487,205 +572,205 @@
           </div>
         </div>
 
-      <!-- 评论区 -->
-      <div class="row border-main bg-light details py-2 px-5 my-5">
-        <h4 style="padding-top:13px;">评论区</h4>
-        <textarea
-          style="width:100%;"
-          placeholder="请输入评论"
-        ></textarea><br>
-        <button
-          class="btn btn-vice"
-          style="margin-top:13px;width:100%;height:100%"
-        >提交评论</button>
+        <!-- 评论区 -->
+        <div class="row border-main bg-light details py-2 px-5 my-5">
+          <h4 style="padding-top:13px;">评论区</h4>
+          <textarea
+            style="width:100%;"
+            placeholder="请输入评论"
+          ></textarea><br>
+          <button
+            class="btn btn-vice"
+            style="margin-top:13px;width:100%;height:100%"
+          >提交评论</button>
 
-        <div class="d-flex py-4">
-          <div class="flex-shrink-0">
-            <i class="lee6 fa-solid fa-circle-user"></i>
+          <div class="d-flex py-4">
+            <div class="flex-shrink-0">
+              <i class="lee6 fa-solid fa-circle-user"></i>
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <h5>小陈</h5>
+              感觉行政要做的东西好庞杂......
+            </div>
           </div>
-          <div class="flex-grow-1 ms-3">
-            <h5>小陈</h5>
-         感觉行政要做的东西好庞杂......
+        </div>
+
+      </div>
+
+
+
+      <!-- 右侧页面内容：关联职业 -->
+      <div class="col-2 d-none d-md-block cm">
+        <h1>关联职业</h1>
+        <hr>
+        <!-- card1 -->
+        <a
+          href="jobDetails.html"
+          target="_blank"
+        >
+          <div class="cm-card text-center my-2">
+            <h4><strong>心理咨询师</strong></h4>
+            <hr class="m-1">
+
+            <div class="progress">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                style="width: 75%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >兴趣匹配 75%</div>
+            </div>
+
+
+            <div class="progress">
+              <div
+                class="progress-bar bg-warning text-dark"
+                role="progressbar"
+                style="width: 72%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >条件适配 72%</div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      </div>
-
-
-
-    <!-- 右侧页面内容：关联职业 -->
-    <div class="col-2 d-none d-md-block cm">
-      <h1>关联职业</h1>
-      <hr>
-      <!-- card1 -->
-      <a
+        </a>
+        <!-- card2 -->
+        <a
           href="jobDetails.html"
           target="_blank"
-      >
-      <div class="cm-card text-center my-2">
-        <h4><strong>心理咨询师</strong></h4>
-        <hr class="m-1">
+        >
+          <div class="cm-card text-center my-2">
+            <h4><strong>培训专员</strong></h4>
+            <hr class="m-1">
 
-        <div class="progress">
-          <div
-            class="progress-bar bg-success"
-            role="progressbar"
-            style="width: 75%"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >兴趣匹配 75%</div>
-        </div>
+            <div class="progress">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                style="width: 71%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >兴趣匹配 71%</div>
+            </div>
 
 
-        <div class="progress">
-          <div
-            class="progress-bar bg-warning text-dark"
-            role="progressbar"
-            style="width: 72%"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >条件适配 72%</div>
-        </div>
-      </div>
-    </a>
-      <!-- card2 -->
-      <a
+            <div class="progress">
+              <div
+                class="progress-bar bg-warning text-dark"
+                role="progressbar"
+                style="width: 68%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >条件适配 68%</div>
+            </div>
+          </div>
+        </a>
+        <!-- card3 -->
+        <a
           href="jobDetails.html"
           target="_blank"
-      >
-      <div class="cm-card text-center my-2">
-        <h4><strong>培训专员</strong></h4>
-        <hr class="m-1">
+        >
+          <div class="cm-card text-center my-2">
+            <h4><strong>薪酬专员</strong></h4>
+            <hr class="m-1">
 
-        <div class="progress">
-          <div
-            class="progress-bar bg-success"
-            role="progressbar"
-            style="width: 71%"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >兴趣匹配 71%</div>
-        </div>
+            <div class="progress">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                style="width: 65%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >兴趣匹配 65%</div>
+            </div>
 
 
-        <div class="progress">
-          <div
-            class="progress-bar bg-warning text-dark"
-            role="progressbar"
-            style="width: 68%"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >条件适配 68%</div>
-        </div>
-      </div>
-      </a>
-      <!-- card3 -->
-      <a
+            <div class="progress">
+              <div
+                class="progress-bar bg-warning text-dark"
+                role="progressbar"
+                style="width: 71%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >条件适配 71%</div>
+            </div>
+          </div>
+        </a>
+        <!-- card4 -->
+        <a
           href="jobDetails.html"
           target="_blank"
-      >
-      <div class="cm-card text-center my-2">
-        <h4><strong>薪酬专员</strong></h4>
-        <hr class="m-1">
+        >
+          <div class="cm-card text-center my-2">
+            <h4><strong>猎头</strong></h4>
+            <hr class="m-1">
 
-        <div class="progress">
-          <div
-            class="progress-bar bg-success"
-            role="progressbar"
-            style="width: 65%"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >兴趣匹配 65%</div>
-        </div>
+            <div class="progress">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                style="width: 62%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >兴趣匹配 62%</div>
+            </div>
 
 
-        <div class="progress">
-          <div
-            class="progress-bar bg-warning text-dark"
-            role="progressbar"
-            style="width: 71%"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >条件适配 71%</div>
-        </div>
-      </div>
-    </a>
-      <!-- card4 -->
-      <a
+            <div class="progress">
+              <div
+                class="progress-bar bg-warning text-dark"
+                role="progressbar"
+                style="width: 65%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >条件适配 65%</div>
+            </div>
+          </div>
+        </a>
+        <!-- card-5 -->
+        <a
           href="jobDetails.html"
           target="_blank"
-      >
-      <div class="cm-card text-center my-2">
-        <h4><strong>猎头</strong></h4>
-        <hr class="m-1">
+        >
+          <div class="cm-card text-center my-2">
+            <h4><strong>行政管理</strong></h4>
+            <hr class="m-1">
 
-        <div class="progress">
-          <div
-            class="progress-bar bg-success"
-            role="progressbar"
-            style="width: 62%"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >兴趣匹配 62%</div>
-        </div>
+            <div class="progress">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                style="width: 75%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >兴趣匹配 73%</div>
+            </div>
 
 
-        <div class="progress">
-          <div
-            class="progress-bar bg-warning text-dark"
-            role="progressbar"
-            style="width: 65%"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >条件适配 65%</div>
-        </div>
+            <div class="progress">
+              <div
+                class="progress-bar bg-warning text-dark"
+                role="progressbar"
+                style="width: 51%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >条件适配 51%</div>
+            </div>
+          </div>
+        </a>
       </div>
-    </a>
-      <!-- card-5 -->
-      <a
-          href="jobDetails.html"
-          target="_blank"
-      >
-      <div class="cm-card text-center my-2">
-        <h4><strong>行政管理</strong></h4>
-        <hr class="m-1">
 
-        <div class="progress">
-          <div
-            class="progress-bar bg-success"
-            role="progressbar"
-            style="width: 75%"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >兴趣匹配 73%</div>
-        </div>
-
-
-        <div class="progress">
-          <div
-            class="progress-bar bg-warning text-dark"
-            role="progressbar"
-            style="width: 51%"
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          >条件适配 51%</div>
-        </div>
-      </div>
-    </a>
     </div>
-
-  </div>
   </div>
 
   <br>
@@ -699,11 +784,18 @@
         &copy; Copyright <strong>YOULU</strong>. All Rights Reserved
       </div>
       <div class="credits">
-        Designed by <a href="index.html" target="_blank">youlu</a>
+        Designed by <a
+          href="index.html"
+          target="_blank"
+        >youlu</a>
       </div>
       <br>
     </footer>
   </div>
+  <a
+    href="#"
+    class="back-to-top d-flex align-items-center justify-content-center"
+  ><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- 国内 Staticfile CDN 上的 Bootstrap5 核心 JavaScript 文件 -->
   <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -712,108 +804,7 @@
 
 </body>
 
-<script>
-  // 背景移动
-  $('.body-bg').mousemove(function (e) {
-    var motion_rate = 0.07;
-    var x = (e.screenX / $(window).width() - 0.5) * motion_rate;
-    var y = (e.screenY / $(window).height() - 0.5) * motion_rate;
-    $(this).css('background-position', (-x + 0.5) * 100 + '%' + (-y + 0.5) * 100 + "%");
-  });
-  // 固定（fixed类）
-  var fix_height = $(".fixed").offset().top;
-  $(window).scroll(function () {
-    if ($(document).scrollTop() >= fix_height) {
-      $(".fixed").css("transform", "translateY(" + ($(document).scrollTop() - fix_height + 20) + "px)");
-    } else {
-      $(".fixed").css("transform", "none");
-    }
-  });
-
-
-
-  // <!-- chart3 -->
-
-  var chart = c3.generate({
-    bindto: '#chart3',
-    data: {
-        x: 'x',
-        columns: [
-            ['x', '2017-01-01', '2018-01-02', '2019-01-03', '2020-01-04', '2021-01-05', '2022-01-06'],
-            ['高中及以下', 13, 12, 18, 12, 12, 15],
-            ['本科', 47, 50, 53, 43, 52, 55],
-            ['硕士', 28, 25, 19, 27, 22, 19],
-            ['博士', 12, 13, 17, 12, 14, 11]
-        ],
-        type: 'bar',
-        labels: true
-    },
-    axis: {
-      y: {
-        label: '%'
-      },
-        x: {
-            type: 'timeseries',
-            tick: {
-                format: '%Y'
-            }
-        }
-    }
-});
-
-
-  // <!-- chart4 -->
-
-  var chart4 = c3.generate({
-    bindto: '#chart4',
-    data: {
-      x:'x', 
-      columns: [
-        ['x','2020-01-04', '2021-01-05', '2022-01-06'],
-        ['头部薪资', 18000, 21000, 24000],
-        ['平均薪资', 8000, 7900, 9000],
-        ['入行薪资', 5500, 5700, 6000]
-      ],
-      labels: true
-    },
-    axis: {
-      y: {
-        label: '元'
-      },
-      x: {
-            type: 'timeseries',
-            tick: {
-                format: '%Y'
-            }
-        }
-    }
-  });
-
-
-  // <!-- chart5 -->
-
-  var chart5 = c3.generate({
-    bindto: '#chart5',
-    data: {
-      x:"x",
-      columns: [
-        ['x', '2017-01-01', '2018-01-02', '2019-01-03', '2020-01-04', '2021-01-05', '2022-01-06'],
-        ['应届岗位数量', 3700, 4600, 4200, 4000, 4500]
-      ],
-      labels: true
-    },
-    axis: {
-      x: {
-        type: 'timeseries',
-            tick: {
-                format: '%Y'
-            }
-      }
-    }
-  })
-
-
-</script>
+<script src="./js/job.js"></script>
 
 </body>
 

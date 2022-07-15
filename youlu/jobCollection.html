@@ -18,64 +18,71 @@
         rel="stylesheet"
         href="css/youlu.css"
     >
+    <link
+        href="./index/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+        rel="stylesheet"
+    >
 
     <title>职业总览</title>
-    <link rel="icon" href="favicon.ico">
-    </head>
+    <link
+        rel="icon"
+        href="favicon.ico"
+    >
+</head>
 
-    <body class="body-bg">
+<body class="body-bg">
 
     <!---这是导航栏--->
     <nav class="navbar navbar-expand-md nav mb-5">
-      <div class="container-fluid">
-        <a
-          class="navbar-brand"
-          href="index.html"
-          target="_blank"
-        >
-          有 鹿 🦌
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="careerPlanning.html"
+        <div class="container-fluid">
+            <a
+                class="navbar-brand"
+                href="index.html"
                 target="_blank"
-              >&nbsp;探索鹿径&nbsp;</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="jobCollection.html"
-                target="_blank"
-              >&nbsp;职业总览&nbsp;</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="lu2.html"
-                target="_blank"
-              >&nbsp;我的鹿径</a>
-            </li>
-            </li>
-          </ul>
+            >
+                有 鹿 🦌
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+                class="collapse navbar-collapse justify-content-end"
+                id="navbarNav"
+            >
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="careerPlanning.html"
+                            target="_blank"
+                        >&nbsp;探索鹿径&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="jobCollection.html"
+                            target="_blank"
+                        >&nbsp;职业总览&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="lu2.html"
+                            target="_blank"
+                        >&nbsp;我的鹿径</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- 翻页按钮 -->
@@ -322,10 +329,10 @@
                     </div>
                     <!-- 职业卡片6 -->
                     <div class="col-6 col-md-4">
-                      <a
-                          href="jobDetails3.html"
-                          target="_blank"
-                      >
+                        <a
+                            href="jobDetails3.html"
+                            target="_blank"
+                        >
                             <div class="card-job">
                                 <img
                                     src="https://www.svgrepo.com/show/43448/computer-worker.svg"
@@ -352,17 +359,25 @@
 
     <!---这是footer--->
     <div class="container-fluid footer mt-5">
-      <footer>
-        <br>
-        <div class="copyright">
-          &copy; Copyright <strong>YOULU</strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          Designed by <a href="index.html" target="_blank">youlu</a>
-        </div>
-        <br>
-      </footer>
+        <footer>
+            <br>
+            <div class="copyright">
+                &copy; Copyright <strong>YOULU</strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                Designed by <a
+                    href="index.html"
+                    target="_blank"
+                >youlu</a>
+            </div>
+            <br>
+        </footer>
     </div>
+
+    <a
+        href="#"
+        class="back-to-top d-flex align-items-center justify-content-center"
+    ><i class="bi bi-arrow-up-short"></i></a>
 
 
     <!-- 国内 Staticfile CDN 上的 Bootstrap5 核心 JavaScript 文件 -->
@@ -388,6 +403,16 @@
                 } else {
                     $(".btn-page").css("opacity", "0%");
                     $(".btn-page").css("pointer-events", "none");
+                };
+                if ($(document).scrollTop() >= ($(document).height() -$(window).height() - $(".footer").height())) {
+                    $(".back-to-top").css("background", "#374B43");
+                }else if($(document).scrollTop() > $(".nav").height() * 1.5 ){
+                    $(".back-to-top").css("background", "#3A745F");
+                    $(".back-to-top").css("visibility", "visible");
+                    $(".back-to-top").css("opacity", "1");
+                }else {
+                    $(".back-to-top").css("visibility", "hidden");
+                    $(".back-to-top").css("opacity", "0");
                 }
             });
 
