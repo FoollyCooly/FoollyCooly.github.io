@@ -598,6 +598,12 @@
     background-color: rgba(58, 116, 95, .60);
     margin: 0;
     overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+.road img{
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 #deer-head {
@@ -681,6 +687,69 @@
 .deer-card:hover p {
     /* display: block; */
     opacity: 100;
+}
+
+/* 滚动条 */
+.road::-webkit-scrollbar{
+    background: rgba(58, 116, 95, .0);
+    width: 10px;
+}
+
+.road::-webkit-scrollbar-thumb{
+    background: #FFE5B4;
+    border-radius: 15px;
+}
+
+.road::-webkit-scrollbar-thumb:hover{
+    background: #dec79c;
+}
+
+/* lu翻页 */
+.btn-scroll {
+    position: absolute;
+    top: 0;
+    display: none;
+    height: 60vh;
+    width: 8vw;
+    cursor: pointer;
+    z-index: 2;
+    transition: filter 0.5s;
+    filter: opacity(0.8);
+}
+
+.btn-scroll:hover{
+    filter: opacity(0.4);
+}
+
+.btn-scroll:active{
+    filter: opacity(1);
+}
+
+.btn-scroll i{
+    position: absolute;
+    top: 50%;
+    line-height: 0;
+    font-size: 2rem;
+    transform: translateY(-1rem);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#toleft{
+    background:linear-gradient(to right,rgba(0,0,0,0.25),rgba(0,0,0,0));
+    left: 0;
+}
+
+#toleft i{
+    left: 2vw;
+}
+
+#toright{
+    background:linear-gradient(to left,rgba(0,0,0,0.25),rgba(0,0,0,0));
+    right: 0;
+}
+
+#toright i{
+    right: 2vh;
 }
 
 /* 其他 */
