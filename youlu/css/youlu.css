@@ -579,7 +579,16 @@
 #road-title {
     margin-bottom: 1rem;
     font-family: "yuehei";
+    position: relative;
+}
 
+#road-title .road-re{
+    position: absolute;
+    right: 0;
+}
+
+#road-title i::before{
+    vertical-align: -0.1875em;
 }
 
 #road-title a {
